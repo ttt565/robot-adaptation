@@ -1,0 +1,24 @@
+{
+  "episode_id": "test_000",
+  "complete": true,
+  "steps": 120,
+  "weights_before": "75c9cf790f544d982d296985071f00282c3ea0e301fa15e653958101c320f37b",
+  "weights_after": "75c9cf790f544d982d296985071f00282c3ea0e301fa15e653958101c320f37b",
+  "weights_unchanged": true,
+  "hidden_state_coordinate_std": [
+    0.4705750346183777,
+    0.3045901656150818,
+    0.7746821045875549,
+    0.5592665076255798,
+    0.4123886823654175,
+    0.36647894978523254,
+    0.22992177307605743,
+    0.6831713914871216
+  ],
+  "one_speed_rmse": 0.008019755957143429,
+  "one_yaw_rmse": 0.010177508355516446,
+  "median_inference_ms": 2.395300005446188,
+  "score_scope": "whole available episode including cold start; not the burn-in-excluded benchmark score",
+  "inputs": "fresh MuJoCo observed motion + current RGB + previous nominal input; future inputs preplanned",
+  "online_update": "GRU hidden state only; network weights frozen; context frozen inside each half-second rollout"
+}

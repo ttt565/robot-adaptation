@@ -1,0 +1,40 @@
+{
+  "one_speed_rmse_post": 0.010383727528609598,
+  "one_yaw_rmse_post": 0.021004159944476818,
+  "half_speed_rmse_post": 0.04556312732008184,
+  "half_yaw_rmse_post": 0.20770734948916625,
+  "half_rmse_pre": [
+    0.0076453533983686355,
+    0.0017392569402657199
+  ],
+  "one_observation_innovation_rmse_post": [
+    0.014541606643093851,
+    0.023647926941984823
+  ],
+  "half_speed_absolute_error_integral_post": 0.334007864925467,
+  "half_yaw_absolute_error_integral_post": 1.5447829947993803,
+  "one_post_origin_interval": [
+    8.0,
+    15.98
+  ],
+  "half_post_origin_interval": [
+    8.0,
+    15.5
+  ],
+  "event_time_evaluation_only": 8.0,
+  "recovery": {
+    "status": "not_recovered",
+    "confirmation_delay": null
+  },
+  "visual_trigger_times": [],
+  "log_observations_sha256": "9c306d28fc2ceb3608b3926229d1cb720a9bf30aabd721fcd84c30649a667d30",
+  "log_commands_sha256": "8dcba8482bd1165dfed9cdf2c5533137b795cf00b8e98d0952da6a38f6276571",
+  "finite_predictions": true,
+  "parameter_semantics": "effective planar drive gains; not friction coefficients or a learned neural latent",
+  "prediction_source_sha256": {
+    "predictors.py": "d6fa6b47e9f2284ccba1f9da85c1d47528a8595cf104808e1e3f86c7193fc6ee",
+    "control_core.py": "70c63472f42a2abd7ac62e2adc6251598bde71ab26a99722a3445ce821ea4781",
+    "run_prediction.py": "beed0a81f7c5b0f8bb9e777a4c121e4917cb162b44b7df6a0b23a9b8dd18b59d"
+  },
+  "missing_half_targets": 24
+}

@@ -1,0 +1,36 @@
+{
+  "status": "passed_shared_log_prediction_benchmark",
+  "checked_on": "2026-10-20",
+  "checks": [
+    "seed 2: five valid physical logs, twenty predictors; shared commands/observations; correct forecast targets; paired appearances do not alter motion",
+    "seed 3: five valid physical logs, twenty predictors; shared commands/observations; correct forecast targets; paired appearances do not alter motion",
+    "future-observation perturbations preserve all forecasts through the shared prefix",
+    "half-second forecasting does not update or mutate the frozen gain/history",
+    "replay after public-settings isolation reproduces all forty saved forecast arrays exactly"
+  ],
+  "physical_logs": 10,
+  "model_evaluations": 40,
+  "runtime_seeds": [
+    2,
+    3
+  ],
+  "method_scope": "online explicit effective-drive identification; RGB-change window scheduling only; no neural latent or image-to-friction learning",
+  "findings": "history adaptation improves changed-dynamics forecasts on these logs; healthy updating adds noise; incremental RGB benefit is not stable",
+  "source_sha256": {
+    "appearance.py": "cd4f09364791dc81659c8188e21ab8ec5ab86415c699f4ddf15d332f77f35024",
+    "config.json": "358a2dee2a565053b44226b1300cda2a7961f9399325d1f4204520d27df7a4f1",
+    "control_core.py": "70c63472f42a2abd7ac62e2adc6251598bde71ab26a99722a3445ce821ea4781",
+    "diagnostics.py": "a661bd30000524b69a74f0af757b7b544550a4d256e616ecac5a8853d0aa44ae",
+    "engine.py": "6325d0a0a2e398b6f6855c013a774ad72d095323cabcb21ee200fc55cdeec80a",
+    "robot.xml": "f2b28f9b8c7790a658fc2fd9b12d403f91ee465bfcba5e22129102875604573c",
+    "surfaces.py": "7cebc74146f122d405cf62d3fd148adf32dade45d6825dd533fcc20b2e7c57fc",
+    "run_vision.py": "341e6a1382c3909c738150a6627a1122c3a835d894fb28ad3559bd943d8016e6",
+    "vision_dashboard.py": "5039947502ffaad1e76a0568431efca718544563fad6e9c2e4d8ba836cad1eb4",
+    "predictors.py": "d6fa6b47e9f2284ccba1f9da85c1d47528a8595cf104808e1e3f86c7193fc6ee",
+    "run_prediction.py": "beed0a81f7c5b0f8bb9e777a4c121e4917cb162b44b7df6a0b23a9b8dd18b59d",
+    "prediction_dashboard.py": "eefb7b5aafb5bce5a0c81230acd3d8cc0a1ad31d8504b0174e25394822a35e0b",
+    "README.md": "26a12e8d2428ec65871cb515d1797e470f0b375a515f13e923ab6ff7a67c120f",
+    "run_prediction.cmd": "ddb245b22017f8d34eafe9b197059581c3986f95a6776fd71847f929a5e9f129",
+    "requirements.txt": "81f7a9a1b6b99c07f5c347280fbcea8db63cf3689079dc29cefe330ed1035662"
+  }
+}

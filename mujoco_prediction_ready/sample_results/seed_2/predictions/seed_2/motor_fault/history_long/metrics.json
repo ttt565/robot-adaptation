@@ -1,0 +1,42 @@
+{
+  "one_speed_rmse_post": 0.01018595548992031,
+  "one_yaw_rmse_post": 0.011336991074562222,
+  "half_speed_rmse_post": 0.01853955021860421,
+  "half_yaw_rmse_post": 0.07255210134158017,
+  "half_rmse_pre": [
+    0.00845081636449133,
+    0.0025950269088906054
+  ],
+  "one_observation_innovation_rmse_post": [
+    0.014183271584791716,
+    0.015964347356563678
+  ],
+  "half_speed_absolute_error_integral_post": 0.10091312589692439,
+  "half_yaw_absolute_error_integral_post": 0.312078554582274,
+  "one_post_origin_interval": [
+    8.0,
+    15.98
+  ],
+  "half_post_origin_interval": [
+    8.0,
+    15.5
+  ],
+  "event_time_evaluation_only": 8.0,
+  "recovery": {
+    "status": "confirmed",
+    "confirmation_delay": 4.140000000000001,
+    "last_origin_time": 11.64,
+    "confirmation_time": 12.14
+  },
+  "visual_trigger_times": [],
+  "log_observations_sha256": "850ab4b39477f7fdb86cd89387b58f22c47ed88fd29b3e510383cdc718d745c1",
+  "log_commands_sha256": "1a8a93ebe2d5c0d6514d5aeac03724b3c0824486fc5fd7f9f6f128398ca4ff44",
+  "finite_predictions": true,
+  "parameter_semantics": "effective planar drive gains; not friction coefficients or a learned neural latent",
+  "prediction_source_sha256": {
+    "predictors.py": "d6fa6b47e9f2284ccba1f9da85c1d47528a8595cf104808e1e3f86c7193fc6ee",
+    "control_core.py": "70c63472f42a2abd7ac62e2adc6251598bde71ab26a99722a3445ce821ea4781",
+    "run_prediction.py": "beed0a81f7c5b0f8bb9e777a4c121e4917cb162b44b7df6a0b23a9b8dd18b59d"
+  },
+  "missing_half_targets": 24
+}

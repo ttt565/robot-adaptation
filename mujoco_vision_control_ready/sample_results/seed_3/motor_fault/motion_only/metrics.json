@@ -1,0 +1,29 @@
+{
+  "position_rmse": 1.7652599225478653,
+  "peak_position_error": 4.077452611105911,
+  "path_distance_rmse": 0.013073092569009424,
+  "speed_rmse_original_reference": 0.3219664752804228,
+  "end_x": 9.764000991344831,
+  "end_path_progress": 9.764000991344831,
+  "planned_path_distance": 13.841438871959058,
+  "progress_fraction": 0.7054180625054393,
+  "wheel_body_mismatch_mean": 0.009949286799616264,
+  "wheel_body_mismatch_integral": 0.17908716239309277,
+  "wheel_body_threshold_fraction": 0.0,
+  "wheel_body_mismatch_max": 0.13680551945653696,
+  "command_saturation_fraction": 0.0,
+  "absolute_command_integral": 75.23779243503589,
+  "cap_limited_seconds": 9.76,
+  "first_control_action_time": 8.24,
+  "first_visual_change_report": null,
+  "first_motion_anomaly_report": 8.22,
+  "first_slip_report": null,
+  "first_post_patch_contact_evaluation_only": 5.46,
+  "score_interval_seconds": [
+    0.0,
+    18.0
+  ],
+  "complete": true,
+  "camera_frames": 90,
+  "finite": true
+}

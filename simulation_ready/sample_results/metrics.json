@@ -1,0 +1,196 @@
+{
+  "fixed": {
+    "position_rmse": 0.1289910178249452,
+    "steady_position_rmse": 0.13578052079767933,
+    "peak_position_error": 0.17762603148770478,
+    "heading_rmse_degrees": 1.3645508108996283,
+    "speed_rmse": 0.017673546627726505,
+    "tracking_confirmation_delay": null,
+    "tracking_status": "not_recovered",
+    "in_band_fraction_after_change": 0.034545454545454546,
+    "prediction_speed_rmse": 0.01048669091607838,
+    "prediction_yaw_rmse": 0.01648747642553202,
+    "same_log_nominal_speed_rmse": 0.01048669091607838,
+    "same_log_nominal_yaw_rmse": 0.01648747642553202,
+    "command_saturation_fraction": 0.0,
+    "max_absolute_command": 4.68750455134698,
+    "eta_protection_fraction": 0.0,
+    "final_eta_raw": [
+      1.0,
+      1.0
+    ],
+    "final_eta_used": [
+      1.0,
+      1.0
+    ],
+    "alarm_times": [],
+    "pre_change_alarm_count": 0,
+    "skipped_side_updates": [
+      0,
+      0
+    ],
+    "finite": true
+  },
+  "pi": {
+    "position_rmse": 0.03899573790704505,
+    "steady_position_rmse": 0.026344667627090482,
+    "peak_position_error": 0.09501120224073771,
+    "heading_rmse_degrees": 1.2023494502769279,
+    "speed_rmse": 0.014617768253795007,
+    "tracking_confirmation_delay": 5.880000000000001,
+    "tracking_status": "confirmed",
+    "in_band_fraction_after_change": 0.8145454545454546,
+    "prediction_speed_rmse": 0.010487320381873394,
+    "prediction_yaw_rmse": 0.01654407589000629,
+    "same_log_nominal_speed_rmse": 0.010487320381873394,
+    "same_log_nominal_yaw_rmse": 0.01654407589000629,
+    "command_saturation_fraction": 0.0,
+    "max_absolute_command": 4.862815719381925,
+    "eta_protection_fraction": 0.0,
+    "final_eta_raw": [
+      1.0,
+      1.0
+    ],
+    "final_eta_used": [
+      1.0,
+      1.0
+    ],
+    "alarm_times": [],
+    "pre_change_alarm_count": 0,
+    "skipped_side_updates": [
+      0,
+      0
+    ],
+    "finite": true
+  },
+  "window_40": {
+    "position_rmse": 0.02391983385172613,
+    "steady_position_rmse": 0.022380182530902074,
+    "peak_position_error": 0.03930920596747406,
+    "heading_rmse_degrees": 0.2675291740316881,
+    "speed_rmse": 0.0056725247639675645,
+    "tracking_confirmation_delay": 0.0,
+    "tracking_status": "remained_in_band",
+    "in_band_fraction_after_change": 1.0,
+    "prediction_speed_rmse": 0.010188292526243864,
+    "prediction_yaw_rmse": 0.009992349417545334,
+    "same_log_nominal_speed_rmse": 0.010340694769275311,
+    "same_log_nominal_yaw_rmse": 0.016376434836202495,
+    "command_saturation_fraction": 0.0,
+    "max_absolute_command": 5.213163365461449,
+    "eta_protection_fraction": 0.003997335109926716,
+    "final_eta_raw": [
+      0.640168152590695,
+      1.2784716622598125
+    ],
+    "final_eta_used": [
+      0.640168152590695,
+      1.2784716622598125
+    ],
+    "alarm_times": [],
+    "pre_change_alarm_count": 0,
+    "skipped_side_updates": [
+      0,
+      0
+    ],
+    "finite": true
+  },
+  "window_80": {
+    "position_rmse": 0.021772951381170958,
+    "steady_position_rmse": 0.018280703648570183,
+    "peak_position_error": 0.046361595967886006,
+    "heading_rmse_degrees": 0.394429489395679,
+    "speed_rmse": 0.006690881958347038,
+    "tracking_confirmation_delay": 0.0,
+    "tracking_status": "remained_in_band",
+    "in_band_fraction_after_change": 1.0,
+    "prediction_speed_rmse": 0.010074252316011735,
+    "prediction_yaw_rmse": 0.009930937615621844,
+    "same_log_nominal_speed_rmse": 0.010383674186951315,
+    "same_log_nominal_yaw_rmse": 0.016399710215126345,
+    "command_saturation_fraction": 0.0,
+    "max_absolute_command": 4.958718185332408,
+    "eta_protection_fraction": 0.0,
+    "final_eta_raw": [
+      0.6029735796621916,
+      1.193092744497324
+    ],
+    "final_eta_used": [
+      0.6029735796621916,
+      1.193092744497324
+    ],
+    "alarm_times": [],
+    "pre_change_alarm_count": 0,
+    "skipped_side_updates": [
+      0,
+      0
+    ],
+    "finite": true
+  },
+  "window_160": {
+    "position_rmse": 0.02341596779568427,
+    "steady_position_rmse": 0.016391712391337687,
+    "peak_position_error": 0.06105296812434079,
+    "heading_rmse_degrees": 0.553383497920441,
+    "speed_rmse": 0.008980678984082481,
+    "tracking_confirmation_delay": 3.6799999999999997,
+    "tracking_status": "confirmed",
+    "in_band_fraction_after_change": 0.9163636363636364,
+    "prediction_speed_rmse": 0.010016480043121764,
+    "prediction_yaw_rmse": 0.009945251330950578,
+    "same_log_nominal_speed_rmse": 0.010404972184185495,
+    "same_log_nominal_yaw_rmse": 0.0164052636752569,
+    "command_saturation_fraction": 0.0,
+    "max_absolute_command": 4.978125372148966,
+    "eta_protection_fraction": 0.0,
+    "final_eta_raw": [
+      0.5914830335859008,
+      1.1531980656558045
+    ],
+    "final_eta_used": [
+      0.5914830335859008,
+      1.1531980656558045
+    ],
+    "alarm_times": [],
+    "pre_change_alarm_count": 0,
+    "skipped_side_updates": [
+      0,
+      0
+    ],
+    "finite": true
+  },
+  "adaptive": {
+    "position_rmse": 0.019589147860586964,
+    "steady_position_rmse": 0.016393681620013204,
+    "peak_position_error": 0.04258321372592887,
+    "heading_rmse_degrees": 0.35374406875031467,
+    "speed_rmse": 0.00622089063321261,
+    "tracking_confirmation_delay": 0.0,
+    "tracking_status": "remained_in_band",
+    "in_band_fraction_after_change": 1.0,
+    "prediction_speed_rmse": 0.010012770800377031,
+    "prediction_yaw_rmse": 0.009890187402249605,
+    "same_log_nominal_speed_rmse": 0.0104050073704249,
+    "same_log_nominal_yaw_rmse": 0.016410531203515804,
+    "command_saturation_fraction": 0.0,
+    "max_absolute_command": 4.8982769320024415,
+    "eta_protection_fraction": 0.0,
+    "final_eta_raw": [
+      0.591483076202535,
+      1.1531981257569326
+    ],
+    "final_eta_used": [
+      0.591483076202535,
+      1.1531981257569326
+    ],
+    "alarm_times": [
+      8.52
+    ],
+    "pre_change_alarm_count": 0,
+    "skipped_side_updates": [
+      0,
+      0
+    ],
+    "finite": true
+  }
+}

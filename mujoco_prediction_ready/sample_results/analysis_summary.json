@@ -1,0 +1,581 @@
+{
+  "aggregate": [
+    {
+      "case": "normal",
+      "mode": "fixed",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.009936281647500884,
+        "one_yaw_rmse_post": 0.009449664752692398,
+        "half_speed_rmse_post": 0.007454025834585878,
+        "half_yaw_rmse_post": 0.0015776758572249717
+      },
+      "confirmation_statuses": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "normal",
+      "mode": "history_long",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010004419194006606,
+        "one_yaw_rmse_post": 0.00952037713060444,
+        "half_speed_rmse_post": 0.008967174502060103,
+        "half_yaw_rmse_post": 0.002713494028659254
+      },
+      "confirmation_statuses": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "normal",
+      "mode": "history_adaptive",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010004419194006606,
+        "one_yaw_rmse_post": 0.00952037713060444,
+        "half_speed_rmse_post": 0.008967174502060103,
+        "half_yaw_rmse_post": 0.002713494028659254
+      },
+      "confirmation_statuses": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "normal",
+      "mode": "vision_history",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010004419194006606,
+        "one_yaw_rmse_post": 0.00952037713060444,
+        "half_speed_rmse_post": 0.008967174502060103,
+        "half_yaw_rmse_post": 0.002713494028659254
+      },
+      "confirmation_statuses": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "visible_surface_only",
+      "mode": "fixed",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.009936281647500884,
+        "one_yaw_rmse_post": 0.009449664752692398,
+        "half_speed_rmse_post": 0.007454025834585878,
+        "half_yaw_rmse_post": 0.0015776758572249717
+      },
+      "confirmation_statuses": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "visible_surface_only",
+      "mode": "history_long",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010004419194006606,
+        "one_yaw_rmse_post": 0.00952037713060444,
+        "half_speed_rmse_post": 0.008967174502060103,
+        "half_yaw_rmse_post": 0.002713494028659254
+      },
+      "confirmation_statuses": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "visible_surface_only",
+      "mode": "history_adaptive",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010004419194006606,
+        "one_yaw_rmse_post": 0.00952037713060444,
+        "half_speed_rmse_post": 0.008967174502060103,
+        "half_yaw_rmse_post": 0.002713494028659254
+      },
+      "confirmation_statuses": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "visible_surface_only",
+      "mode": "vision_history",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010028025027716176,
+        "one_yaw_rmse_post": 0.009544162149875638,
+        "half_speed_rmse_post": 0.009641918848727714,
+        "half_yaw_rmse_post": 0.0031350772421676323
+      },
+      "confirmation_statuses": [
+        "not_applicable",
+        "not_applicable"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "hidden_low_friction",
+      "mode": "fixed",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.011393095622465817,
+        "one_yaw_rmse_post": 0.010713700869993523,
+        "half_speed_rmse_post": 0.07619566001019838,
+        "half_yaw_rmse_post": 0.04987341393662883
+      },
+      "confirmation_statuses": [
+        "not_recovered",
+        "not_recovered"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "hidden_low_friction",
+      "mode": "history_long",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010926471586254982,
+        "one_yaw_rmse_post": 0.010243728624975048,
+        "half_speed_rmse_post": 0.02938671961121167,
+        "half_yaw_rmse_post": 0.04003687517836075
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 3.71
+    },
+    {
+      "case": "hidden_low_friction",
+      "mode": "history_adaptive",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010961852951196758,
+        "one_yaw_rmse_post": 0.010133189607919944,
+        "half_speed_rmse_post": 0.023520346073732396,
+        "half_yaw_rmse_post": 0.03741263292387732
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 2.66
+    },
+    {
+      "case": "hidden_low_friction",
+      "mode": "vision_history",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010961852951196758,
+        "one_yaw_rmse_post": 0.010133189607919944,
+        "half_speed_rmse_post": 0.023520346073732396,
+        "half_yaw_rmse_post": 0.03741263292387732
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 2.66
+    },
+    {
+      "case": "visible_low_friction",
+      "mode": "fixed",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.011393095622465817,
+        "one_yaw_rmse_post": 0.010713700869993523,
+        "half_speed_rmse_post": 0.07619566001019838,
+        "half_yaw_rmse_post": 0.04987341393662883
+      },
+      "confirmation_statuses": [
+        "not_recovered",
+        "not_recovered"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "visible_low_friction",
+      "mode": "history_long",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010926471586254982,
+        "one_yaw_rmse_post": 0.010243728624975048,
+        "half_speed_rmse_post": 0.02938671961121167,
+        "half_yaw_rmse_post": 0.04003687517836075
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 3.71
+    },
+    {
+      "case": "visible_low_friction",
+      "mode": "history_adaptive",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010961852951196758,
+        "one_yaw_rmse_post": 0.010133189607919944,
+        "half_speed_rmse_post": 0.023520346073732396,
+        "half_yaw_rmse_post": 0.03741263292387732
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 2.66
+    },
+    {
+      "case": "visible_low_friction",
+      "mode": "vision_history",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010951007560386717,
+        "one_yaw_rmse_post": 0.01017861400501743,
+        "half_speed_rmse_post": 0.023446925355669543,
+        "half_yaw_rmse_post": 0.039061170098940126
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 3.030000000000001
+    },
+    {
+      "case": "motor_fault",
+      "mode": "fixed",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010359056611522397,
+        "one_yaw_rmse_post": 0.021055577279101158,
+        "half_speed_rmse_post": 0.045643248010689516,
+        "half_yaw_rmse_post": 0.20823188145305407
+      },
+      "confirmation_statuses": [
+        "not_recovered",
+        "not_recovered"
+      ],
+      "mean_confirmation_delay": null
+    },
+    {
+      "case": "motor_fault",
+      "mode": "history_long",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010220090008630493,
+        "one_yaw_rmse_post": 0.01157646273950307,
+        "half_speed_rmse_post": 0.019338949878092208,
+        "half_yaw_rmse_post": 0.07508580274851456
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 4.3100000000000005
+    },
+    {
+      "case": "motor_fault",
+      "mode": "history_adaptive",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010223540429840099,
+        "one_yaw_rmse_post": 0.01059862338039502,
+        "half_speed_rmse_post": 0.015622144834015783,
+        "half_yaw_rmse_post": 0.05081591228102518
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 2.87
+    },
+    {
+      "case": "motor_fault",
+      "mode": "vision_history",
+      "seeds": [
+        2,
+        3
+      ],
+      "mean": {
+        "one_speed_rmse_post": 0.010223540429840099,
+        "one_yaw_rmse_post": 0.01059862338039502,
+        "half_speed_rmse_post": 0.015622144834015783,
+        "half_yaw_rmse_post": 0.05081591228102518
+      },
+      "confirmation_statuses": [
+        "confirmed",
+        "confirmed"
+      ],
+      "mean_confirmation_delay": 2.87
+    }
+  ],
+  "transition_crossing_forecasts": [
+    {
+      "seed": 2,
+      "case": "hidden_low_friction",
+      "mode": "fixed",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.045823399283791345,
+      "half_yaw_rmse_crossing": 0.06954258168855577
+    },
+    {
+      "seed": 2,
+      "case": "hidden_low_friction",
+      "mode": "history_long",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.04738945340172401,
+      "half_yaw_rmse_crossing": 0.06828608019524206
+    },
+    {
+      "seed": 2,
+      "case": "hidden_low_friction",
+      "mode": "history_adaptive",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.04738945340172401,
+      "half_yaw_rmse_crossing": 0.06828608019524206
+    },
+    {
+      "seed": 2,
+      "case": "hidden_low_friction",
+      "mode": "vision_history",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.04738945340172401,
+      "half_yaw_rmse_crossing": 0.06828608019524206
+    },
+    {
+      "seed": 2,
+      "case": "visible_low_friction",
+      "mode": "fixed",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.045823399283791345,
+      "half_yaw_rmse_crossing": 0.06954258168855577
+    },
+    {
+      "seed": 2,
+      "case": "visible_low_friction",
+      "mode": "history_long",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.04738945340172401,
+      "half_yaw_rmse_crossing": 0.06828608019524206
+    },
+    {
+      "seed": 2,
+      "case": "visible_low_friction",
+      "mode": "history_adaptive",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.04738945340172401,
+      "half_yaw_rmse_crossing": 0.06828608019524206
+    },
+    {
+      "seed": 2,
+      "case": "visible_low_friction",
+      "mode": "vision_history",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.04904059058684909,
+      "half_yaw_rmse_crossing": 0.06862492861931069
+    },
+    {
+      "seed": 2,
+      "case": "motor_fault",
+      "mode": "fixed",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.025223173398888594,
+      "half_yaw_rmse_crossing": 0.13199784599615658
+    },
+    {
+      "seed": 2,
+      "case": "motor_fault",
+      "mode": "history_long",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.027092775483641474,
+      "half_yaw_rmse_crossing": 0.13255402821036782
+    },
+    {
+      "seed": 2,
+      "case": "motor_fault",
+      "mode": "history_adaptive",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.027092775483641474,
+      "half_yaw_rmse_crossing": 0.13255402821036782
+    },
+    {
+      "seed": 2,
+      "case": "motor_fault",
+      "mode": "vision_history",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.027092775483641474,
+      "half_yaw_rmse_crossing": 0.13255402821036782
+    },
+    {
+      "seed": 3,
+      "case": "hidden_low_friction",
+      "mode": "fixed",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.027526434896024535,
+      "half_yaw_rmse_crossing": 0.02316448441989404
+    },
+    {
+      "seed": 3,
+      "case": "hidden_low_friction",
+      "mode": "history_long",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.029436217772563732,
+      "half_yaw_rmse_crossing": 0.02434010732875795
+    },
+    {
+      "seed": 3,
+      "case": "hidden_low_friction",
+      "mode": "history_adaptive",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.029436217772563732,
+      "half_yaw_rmse_crossing": 0.02434010732875795
+    },
+    {
+      "seed": 3,
+      "case": "hidden_low_friction",
+      "mode": "vision_history",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.029436217772563732,
+      "half_yaw_rmse_crossing": 0.02434010732875795
+    },
+    {
+      "seed": 3,
+      "case": "visible_low_friction",
+      "mode": "fixed",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.027526434896024535,
+      "half_yaw_rmse_crossing": 0.02316448441989404
+    },
+    {
+      "seed": 3,
+      "case": "visible_low_friction",
+      "mode": "history_long",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.029436217772563732,
+      "half_yaw_rmse_crossing": 0.02434010732875795
+    },
+    {
+      "seed": 3,
+      "case": "visible_low_friction",
+      "mode": "history_adaptive",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.029436217772563732,
+      "half_yaw_rmse_crossing": 0.02434010732875795
+    },
+    {
+      "seed": 3,
+      "case": "visible_low_friction",
+      "mode": "vision_history",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.029359688424078517,
+      "half_yaw_rmse_crossing": 0.024523931770718117
+    },
+    {
+      "seed": 3,
+      "case": "motor_fault",
+      "mode": "fixed",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.03191198006775071,
+      "half_yaw_rmse_crossing": 0.17195113042119023
+    },
+    {
+      "seed": 3,
+      "case": "motor_fault",
+      "mode": "history_long",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.03379334142183163,
+      "half_yaw_rmse_crossing": 0.173176994314063
+    },
+    {
+      "seed": 3,
+      "case": "motor_fault",
+      "mode": "history_adaptive",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.03379334142183163,
+      "half_yaw_rmse_crossing": 0.173176994314063
+    },
+    {
+      "seed": 3,
+      "case": "motor_fault",
+      "mode": "vision_history",
+      "count": 25,
+      "half_speed_rmse_crossing": 0.03379334142183163,
+      "half_yaw_rmse_crossing": 0.173176994314063
+    }
+  ],
+  "crossing_definition": "origins before event but their 0.5-second terminal targets are at/after event; separate from pre/post scores",
+  "experimental_units": "two paired seeds, ten physical logs, forty shared-log model evaluations; overlapping forecasts are not independent trials",
+  "recovery_interpretation": "confirmation delay includes about 2.46 seconds evaluation floor; not direct physical adaptation time"
+}

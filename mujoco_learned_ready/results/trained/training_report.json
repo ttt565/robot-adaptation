@@ -1,0 +1,47 @@
+{
+  "models": {
+    "history": {
+      "best_epoch": 40,
+      "epochs_run": 40,
+      "best_validation_loss": 0.345528252919515,
+      "parameter_count": 7468,
+      "training_seconds": 21.561848199999076,
+      "checkpoint": "checkpoints/history.pt"
+    },
+    "vision": {
+      "best_epoch": 39,
+      "epochs_run": 40,
+      "best_validation_loss": 0.4596030672391256,
+      "parameter_count": 11788,
+      "training_seconds": 58.798953199991956,
+      "checkpoint": "checkpoints/vision.pt"
+    },
+    "fusion": {
+      "best_epoch": 40,
+      "epochs_run": 40,
+      "best_validation_loss": 0.34231044054031373,
+      "parameter_count": 17484,
+      "training_seconds": 64.26288460000069,
+      "checkpoint": "checkpoints/fusion.pt"
+    }
+  },
+  "seed": 0,
+  "device": "cpu",
+  "torch_version": "2.7.1+cpu",
+  "maximum_epochs": 40,
+  "batch_size": 16,
+  "sequence_length": 20,
+  "burn_in_steps": 10,
+  "future_steps": 5,
+  "training_episode_count": 48,
+  "validation_episode_count": 12,
+  "training_sequences": 480,
+  "validation_sequences": 120,
+  "normalization_split": "train",
+  "checkpoint_selection_split": "val",
+  "loss_uses_truth": false,
+  "learning_source_sha256": "3a50144fab69c47ff067fb526dc1b3d9094ec2baf2c77a3fd05cf2adc301101d",
+  "training_manifest_sha256": "fa7055856f15ae759702074f7a9fb45a6d7548c1c4537e5785a12c001eeace5e",
+  "early_stop": "at least 12 epochs, patience 8; same maximum epochs and batches for all models",
+  "loss": "separate normalized channels; wheel weight .08; one-step + .20 * frozen-context half-second loss"
+}

@@ -1,0 +1,409 @@
+{
+  "model_test": {
+    "train_images": 60,
+    "heldout_images": 30,
+    "heldout_correct": 29,
+    "heldout_accuracy": 0.9666666666666667,
+    "rows": [
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.6959288467926444,
+        "scores": {
+          "tile_grid": 0.6959288467926444,
+          "speckled": 0.3993749218430896,
+          "parallel_stripes": 0.38117205765201934
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.6796441883548425,
+        "scores": {
+          "tile_grid": 0.6796441883548425,
+          "speckled": 0.3762207848269768,
+          "parallel_stripes": 0.3433522310941642
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.7002896514711229,
+        "scores": {
+          "tile_grid": 0.7002896514711229,
+          "speckled": 0.3560451685720417,
+          "parallel_stripes": 0.34600788899210516
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.5142740267109758,
+        "scores": {
+          "tile_grid": 0.5142740267109758,
+          "speckled": 0.23709462821790311,
+          "parallel_stripes": 0.25068816162760765
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.5560478593848708,
+        "scores": {
+          "tile_grid": 0.5560478593848708,
+          "speckled": 0.2525214504948825,
+          "parallel_stripes": 0.27326567794994583
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.7054550140415854,
+        "scores": {
+          "tile_grid": 0.7054550140415854,
+          "speckled": 0.35757715702505755,
+          "parallel_stripes": 0.31820747237842545
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.6110500459941303,
+        "scores": {
+          "tile_grid": 0.6110500459941303,
+          "speckled": 0.4168613660678791,
+          "parallel_stripes": 0.31448125762960755
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.613793140332666,
+        "scores": {
+          "tile_grid": 0.613793140332666,
+          "speckled": 0.3114848994700298,
+          "parallel_stripes": 0.3110169699950696
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.6696077903095109,
+        "scores": {
+          "tile_grid": 0.6696077903095109,
+          "speckled": 0.3583989216452064,
+          "parallel_stripes": 0.37916346422944547
+        }
+      },
+      {
+        "truth": "tile_grid",
+        "label": "tile_grid",
+        "match_score": 0.6720411120983457,
+        "scores": {
+          "tile_grid": 0.6720411120983457,
+          "speckled": 0.3282849441906957,
+          "parallel_stripes": 0.3323325107706869
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.5717347079577546,
+        "scores": {
+          "tile_grid": 0.3261876041181614,
+          "speckled": 0.5717347079577546,
+          "parallel_stripes": 0.20587387181357536
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.6360162690437069,
+        "scores": {
+          "tile_grid": 0.28967937057580473,
+          "speckled": 0.6360162690437069,
+          "parallel_stripes": 0.20275873887656215
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.672888458751028,
+        "scores": {
+          "tile_grid": 0.36322445694879113,
+          "speckled": 0.672888458751028,
+          "parallel_stripes": 0.33994200291515847
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.7081067540970698,
+        "scores": {
+          "tile_grid": 0.30247105641707644,
+          "speckled": 0.7081067540970698,
+          "parallel_stripes": 0.2510543049462976
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.691613697732118,
+        "scores": {
+          "tile_grid": 0.373235180639199,
+          "speckled": 0.691613697732118,
+          "parallel_stripes": 0.28503514898397736
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "unknown",
+        "match_score": 0.09426091320069986,
+        "scores": {
+          "tile_grid": 0.09426091320069986,
+          "speckled": 0.08084680173580763,
+          "parallel_stripes": 0.08414195695797093
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.6616356705497219,
+        "scores": {
+          "tile_grid": 0.3393822810355045,
+          "speckled": 0.6616356705497219,
+          "parallel_stripes": 0.22457097547942798
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.7270863848550351,
+        "scores": {
+          "tile_grid": 0.3795834844159109,
+          "speckled": 0.7270863848550351,
+          "parallel_stripes": 0.2675228140471259
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.6905035987112635,
+        "scores": {
+          "tile_grid": 0.3869379723245636,
+          "speckled": 0.6905035987112635,
+          "parallel_stripes": 0.26493620694218634
+        }
+      },
+      {
+        "truth": "speckled",
+        "label": "speckled",
+        "match_score": 0.6187396381397507,
+        "scores": {
+          "tile_grid": 0.2778322766373862,
+          "speckled": 0.6187396381397507,
+          "parallel_stripes": 0.19525423088169044
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.7661973648098099,
+        "scores": {
+          "tile_grid": 0.2684636017865228,
+          "speckled": 0.2515277750705017,
+          "parallel_stripes": 0.7661973648098099
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.43723403975344655,
+        "scores": {
+          "tile_grid": 0.23153861924307279,
+          "speckled": 0.18372350575000335,
+          "parallel_stripes": 0.43723403975344655
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.5111143032186879,
+        "scores": {
+          "tile_grid": 0.3926396581905118,
+          "speckled": 0.4023417645149233,
+          "parallel_stripes": 0.5111143032186879
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.6453454089754199,
+        "scores": {
+          "tile_grid": 0.3362069169272888,
+          "speckled": 0.3187232519292202,
+          "parallel_stripes": 0.6453454089754199
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.4510851202387724,
+        "scores": {
+          "tile_grid": 0.24189193671980064,
+          "speckled": 0.21879670218024216,
+          "parallel_stripes": 0.4510851202387724
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.5819889989251008,
+        "scores": {
+          "tile_grid": 0.3564046627791701,
+          "speckled": 0.30406765649022893,
+          "parallel_stripes": 0.5819889989251008
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.619917589505669,
+        "scores": {
+          "tile_grid": 0.2711610558854236,
+          "speckled": 0.2313098317875124,
+          "parallel_stripes": 0.619917589505669
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.6951881614232506,
+        "scores": {
+          "tile_grid": 0.28053751720478043,
+          "speckled": 0.2538584328353301,
+          "parallel_stripes": 0.6951881614232506
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.5388522745991614,
+        "scores": {
+          "tile_grid": 0.2402762802512485,
+          "speckled": 0.23158762283671808,
+          "parallel_stripes": 0.5388522745991614
+        }
+      },
+      {
+        "truth": "parallel_stripes",
+        "label": "parallel_stripes",
+        "match_score": 0.5733857571723933,
+        "scores": {
+          "tile_grid": 0.3608871630435634,
+          "speckled": 0.3862070159573566,
+          "parallel_stripes": 0.5733857571723933
+        }
+      }
+    ],
+    "scope": "Synthetic texture appearances rendered by MuJoCo, not real-world material recognition.",
+    "split": "Train texture seeds 0..19 per class; test seeds 200..209 per class; runtime seeds >=1000.",
+    "appearance_sha256": "cd4f09364791dc81659c8188e21ab8ec5ab86415c699f4ddf15d332f77f35024"
+  },
+  "cases": {
+    "normal": {
+      "position_rmse": 0.0075103177064160835,
+      "score_interval_seconds": [
+        0,
+        18.0
+      ],
+      "first_visual_change": null,
+      "first_motion_anomaly": null,
+      "first_slip_evidence": null,
+      "post_patch_first_contact": 5.46,
+      "physical_change_time_evaluation_only": null,
+      "complete": true,
+      "camera_frames": 90,
+      "any_motion_anomaly": false,
+      "any_slip_evidence": false
+    },
+    "visible_surface_only": {
+      "position_rmse": 0.0075103177064160835,
+      "score_interval_seconds": [
+        0,
+        18.0
+      ],
+      "first_visual_change": 5.22,
+      "first_motion_anomaly": null,
+      "first_slip_evidence": null,
+      "post_patch_first_contact": 5.46,
+      "physical_change_time_evaluation_only": null,
+      "complete": true,
+      "camera_frames": 90,
+      "any_motion_anomaly": false,
+      "any_slip_evidence": false
+    },
+    "hidden_low_friction": {
+      "position_rmse": 1.7327064581814797,
+      "score_interval_seconds": [
+        0,
+        18.0
+      ],
+      "first_visual_change": null,
+      "first_motion_anomaly": 6.22,
+      "first_slip_evidence": 5.82,
+      "post_patch_first_contact": 5.46,
+      "physical_change_time_evaluation_only": 5.46,
+      "complete": true,
+      "camera_frames": 90,
+      "any_motion_anomaly": true,
+      "any_slip_evidence": true
+    },
+    "visible_low_friction": {
+      "position_rmse": 1.7327064581814797,
+      "score_interval_seconds": [
+        0,
+        18.0
+      ],
+      "first_visual_change": 5.22,
+      "first_motion_anomaly": 6.22,
+      "first_slip_evidence": 5.82,
+      "post_patch_first_contact": 5.46,
+      "physical_change_time_evaluation_only": 5.46,
+      "complete": true,
+      "camera_frames": 90,
+      "any_motion_anomaly": true,
+      "any_slip_evidence": true
+    },
+    "motor_fault": {
+      "position_rmse": 0.019393444281603577,
+      "score_interval_seconds": [
+        0,
+        18.0
+      ],
+      "first_visual_change": null,
+      "first_motion_anomaly": 8.22,
+      "first_slip_evidence": null,
+      "post_patch_first_contact": 5.46,
+      "physical_change_time_evaluation_only": 8.0,
+      "complete": true,
+      "camera_frames": 90,
+      "any_motion_anomaly": true,
+      "any_slip_evidence": false
+    }
+  },
+  "protocol": {
+    "camera_hz": 5,
+    "controller_hz": 50,
+    "vision_controls_motion": false,
+    "appearance_only": [
+      "tile_grid",
+      "speckled",
+      "parallel_stripes"
+    ],
+    "runtime_classifier_input": "RGB pixels only",
+    "no_truth_input": "EvidenceMonitor sees image predictions, noisy innovations and noisy wheel/IMU/pose observations only.",
+    "scope": "Synthetic appearance plus correlational motion evidence, not real material/causal fault identification.",
+    "headless": "No display windows, but OpenGL offscreen rendering is needed for camera images."
+  }
+}

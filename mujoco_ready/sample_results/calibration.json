@@ -1,0 +1,16 @@
+{
+  "physics": {
+    "mass": 10.209252176556305,
+    "inertia": 0.22338476331153348,
+    "half_track": 0.2,
+    "linear_drag": 4.1248642387390495,
+    "yaw_drag": 0.8040083695793189,
+    "gravity": 9.81
+  },
+  "engine_body_mass": 9.999999999999998,
+  "linear_acceleration_fit_rmse": 0.0029373777032304384,
+  "yaw_acceleration_fit_rmse": 0.009257055645924163,
+  "samples": 750,
+  "source": "separate healthy contact run; noiseless calibration observables; no fault data",
+  "interpretation": "Effective planar approximation, not exact physical mass or inertia."
+}

@@ -1,0 +1,19 @@
+{
+  "backend": "MuJoCo",
+  "version": "3.16.0",
+  "seed": 0,
+  "source_sha256": {
+    "robot.xml": "486ad3bd56c96729011f37376edc0904bf7762d253fd0e2c2942828c954b8603",
+    "engine.py": "6edfd8dfc84efc113a998f72c51243b5cb3ab8cf7f4216ab4f7ca33d77ab9655",
+    "run_mujoco.py": "60f0f82ff78ae18d7864cc0da94802f878e6294a2300b2fc48b828f7e4bb2c8e",
+    "control_core.py": "70c63472f42a2abd7ac62e2adc6251598bde71ab26a99722a3445ce821ea4781",
+    "plotting.py": "2cf3f67b0436e3f9054008a5c792edc01e3e2749f81100f5334984bf0a1f385b"
+  },
+  "controls": "Logged nominal wheel force command in N; actual motor torque=r*command*hidden efficiency, gear=1.",
+  "plant": "Free base, wheel hinges, gravity and frictional contact; explicit known viscous drag; no commanded base velocity or driving base force.",
+  "calibration": "Separate healthy noiseless nominal simulation; approximate effective planar mass/inertia/drag fit before evaluation.",
+  "observation": "Synthetic pose/IMU observations from MuJoCo sensors plus configured Gaussian noise; not a real localization stack.",
+  "eta": "Explicit effective parameter state; not physical-cause identification or neural latent learning.",
+  "scores": "Independent closed-loop trajectories; each run also has same-log nominal shadow prediction errors. Partial runs not scored as full experiments.",
+  "limits": "Feedback-dependent noise threshold is heuristic; low friction is an actual contact-coefficient change but not a calibrated tire model."
+}

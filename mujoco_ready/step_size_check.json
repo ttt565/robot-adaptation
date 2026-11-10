@@ -1,0 +1,14 @@
+{
+  "fixed": {
+    "dt002_position_rmse": 0.24542769941233172,
+    "dt001_position_rmse": 0.2454575063512891,
+    "rms_position_difference": 0.00011801318447884939,
+    "maximum_position_difference": 0.0003679873952819506
+  },
+  "adaptive": {
+    "dt002_position_rmse": 0.021860849408649876,
+    "dt001_position_rmse": 0.02186192870030056,
+    "rms_position_difference": 0.0001684391264035948,
+    "maximum_position_difference": 0.0003679873952819506
+  }
+}

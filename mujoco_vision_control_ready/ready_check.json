@@ -1,0 +1,81 @@
+{
+  "status": "passed_runnable_experiment",
+  "checked_on": "2026-10-20",
+  "checks": [
+    "seed 2: 15 complete cases, finite logs, command/cap bounds, equal original reference and noise, exact control ablations",
+    "seed 3: 15 complete cases, finite logs, command/cap bounds, equal original reference and noise, exact control ablations",
+    "new baseline exactly reproduces previous verified seed 0 run",
+    "persistent visual flag triggers temporary caution once and then recovers",
+    "native 3D + RGB windows: actual evidence-driven cap intervention, clean close, complete=false partial log"
+  ],
+  "policy_parameters_fixed_before_initial_seed_0_results": {
+    "visual_caution_seconds": 1.0,
+    "physical_hold_seconds": 1.0,
+    "visual_speed_cap": 0.55,
+    "motion_speed_cap": 0.4,
+    "slip_speed_cap": 0.25,
+    "cap_fall_rate": 0.6,
+    "cap_rise_rate": 0.3,
+    "entry_speed_margin": 0.05
+  },
+  "new_validation_seeds": [
+    2,
+    3
+  ],
+  "full_validation_runs": 30,
+  "initial_seed_0_visible_low_friction_runs": 3,
+  "live_partial_metrics": {
+    "position_rmse": 0.07073071492281542,
+    "peak_position_error": 0.29800577248923515,
+    "path_distance_rmse": 0.0003324842187823247,
+    "speed_rmse_original_reference": 0.08650378936754669,
+    "end_x": 5.160612634214958,
+    "end_path_progress": 5.160612634214958,
+    "planned_path_distance": 13.841438871959058,
+    "progress_fraction": 0.3728378734287288,
+    "wheel_body_mismatch_mean": 0.044082906630762295,
+    "wheel_body_mismatch_integral": 0.33150345786333246,
+    "wheel_body_threshold_fraction": 0.07712765957446809,
+    "wheel_body_mismatch_max": 0.5255505016637283,
+    "command_saturation_fraction": 0.0,
+    "absolute_command_integral": 35.86740281838572,
+    "cap_limited_seconds": 2.22,
+    "first_control_action_time": 5.3,
+    "first_visual_change_report": 5.22,
+    "first_motion_anomaly_report": null,
+    "first_slip_report": 6.62,
+    "first_post_patch_contact_evaluation_only": 5.46,
+    "score_interval_seconds": [
+      0.0,
+      7.5200000000000005
+    ],
+    "complete": false,
+    "camera_frames": 38,
+    "finite": true
+  },
+  "scientific_outcome": "Caps reduce wheel/body mismatch but worsen original timed tracking and progress; visual gain unstable; motor-fault cap is a failure mode.",
+  "limits": [
+    "Speed target limit is not a hard bound on actual velocity.",
+    "Synthetic appearance classes only; no unique material or root-cause inference.",
+    "Only two new seeds, not a statistical validation.",
+    "Same original timed reference retained; negative results retained."
+  ],
+  "source_sha256": {
+    "appearance.py": "cd4f09364791dc81659c8188e21ab8ec5ab86415c699f4ddf15d332f77f35024",
+    "config.json": "358a2dee2a565053b44226b1300cda2a7961f9399325d1f4204520d27df7a4f1",
+    "control_core.py": "239e6ccd17af6d73b8967c2d9bb9348d90fcdc653320dfcf9d285c3e2165e6d0",
+    "control_dashboard.py": "dbfd2cf1049c9598ca61d8a088503b01b07ab38cb797033936dfa76ed3ee58e8",
+    "diagnostics.py": "a661bd30000524b69a74f0af757b7b544550a4d256e616ecac5a8853d0aa44ae",
+    "engine.py": "6325d0a0a2e398b6f6855c013a774ad72d095323cabcb21ee200fc55cdeec80a",
+    "README.md": "754d778d46b4b9f04173b178841d60bb71710a15f53047ad2320f393d31a5805",
+    "requirements.txt": "81f7a9a1b6b99c07f5c347280fbcea8db63cf3689079dc29cefe330ed1035662",
+    "robot.xml": "f2b28f9b8c7790a658fc2fd9b12d403f91ee465bfcba5e22129102875604573c",
+    "run_control.py": "b78cc7f0e5a39e81b9a1f77ae9433cff20505d9038ac0cd6c7fd2ff9123c1c25",
+    "run_vision.py": "341e6a1382c3909c738150a6627a1122c3a835d894fb28ad3559bd943d8016e6",
+    "speed_governor.py": "4396fef497a5b3f0cb9eb851db2bb9d4ff8d5a4f15d75e5bbb67e823660faa6a",
+    "start_control.cmd": "91de258b4abe0982629b05ad47e8f85f93622b486e8c94af33b74084ec3a06c3",
+    "compare_control.cmd": "e3d8f1f3be6a9f6e4f387244af786db0571d237da7593b739cc32afc9af9a56c",
+    "surfaces.py": "7cebc74146f122d405cf62d3fd148adf32dade45d6825dd533fcc20b2e7c57fc",
+    "vision_dashboard.py": "5039947502ffaad1e76a0568431efca718544563fad6e9c2e4d8ba836cad1eb4"
+  }
+}

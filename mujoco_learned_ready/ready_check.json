@@ -1,0 +1,79 @@
+{
+  "status": "passed_trained_prototype",
+  "checked_on": "2026-11-03",
+  "checks": [
+    "84 valid independent episodes; complete synchronized RGB; 48/12/12/12 split with disjoint texture/input/noise seeds",
+    "training uses observations, train-only normalization and validation-only checkpoint selection",
+    "three neural models actually trained; all 24 held-out episodes have six comparable prediction/ablation outputs",
+    "future observation/RGB perturbation leaves all forecasts through the shared prefix unchanged",
+    "streaming and batched causal inference agree; eight-dimensional hidden context updates while weight hashes stay identical",
+    "fresh MuJoCo streaming run reproduces held-out motion and forecast outputs",
+    "12 projected wheel-ground patches match independent rendered segmentation IDs at six synthetic poses",
+    "native MuJoCo and live RGB/prediction windows opened together; 75 streamed frames; clean automatic close; partial results marked incomplete"
+  ],
+  "frames": 10164,
+  "weight_sha256_before": "75c9cf790f544d982d296985071f00282c3ea0e301fa15e653958101c320f37b",
+  "weight_sha256_after": "75c9cf790f544d982d296985071f00282c3ea0e301fa15e653958101c320f37b",
+  "projection_checks": 12,
+  "source_sha256": {
+    "collect_data.py": "e8e11b4e9f266dda068e941179fc5eaa0891d3c7d739a6eda467f93ec2316d1c",
+    "learning.py": "3a50144fab69c47ff067fb526dc1b3d9094ec2baf2c77a3fd05cf2adc301101d",
+    "pipeline.py": "eca57af13747ec5061d1e57c4966a1bacbef1143051498b44d2c2c19d6d40916",
+    "demo.py": "a437b513e0959742c0cf2c99cf7bbc262487616d131870f94471d370ba4708ad",
+    "verify_pipeline.py": "ebd0fa8b133fb91120dc76d9eb22a7e79e23bdc42fccc1ed086f540d1d299042",
+    "training_dashboard.py": "1f2e296a3860edab1e2589462e0d5c207bf2cff84336919ea566aafb9c3c187a",
+    "engine.py": "6325d0a0a2e398b6f6855c013a774ad72d095323cabcb21ee200fc55cdeec80a",
+    "control_core.py": "70c63472f42a2abd7ac62e2adc6251598bde71ab26a99722a3445ce821ea4781",
+    "robot.xml": "f2b28f9b8c7790a658fc2fd9b12d403f91ee465bfcba5e22129102875604573c",
+    "appearance.py": "cd4f09364791dc81659c8188e21ab8ec5ab86415c699f4ddf15d332f77f35024",
+    "config.json": "358a2dee2a565053b44226b1300cda2a7961f9399325d1f4204520d27df7a4f1",
+    "README.md": "7e941f8faca3fa285fd6df160295bee2d6cfb734b4ea976397b562cdd7ba36d3",
+    "requirements.txt": "152579920695c944d57718c5c9b72773bb064a7d9b3745e20402b99f2b07bd92",
+    "run_all.cmd": "0e948389780c76c201d0cd8d939aeef495b093dddcf7eeb9d743425a2c3fd5e6",
+    "train_only.cmd": "e7b551b847e8683493bb89a489a73b23deab33ed2bda7e3a5cb5f85eb86cbb95",
+    "evaluate.cmd": "8acdcb00c819226698c8d0823de33ecbf99abefff42b1f58b8783fd618f17a11",
+    "run_demo.cmd": "cdfc548238f767a0e60aec2b4d2e1a1dafbff5fd50c3c0bfcd42f14dc56b90fc"
+  },
+  "limits": [
+    "ideal current-contact camera; robot geometry hidden; no forward anticipation or real-camera calibration result",
+    "single training seed and limited procedural simulated textures; no real-world performance claim",
+    "fusion image-ablation change is small; incremental visual benefit has not been established",
+    "learned latent coordinates are not calibrated physical/friction parameters"
+  ],
+  "five_stages": {
+    "synchronized_data": {
+      "complete": true,
+      "episodes": 84,
+      "frames": 10164,
+      "split": "48 train / 12 val / 12 test / 12 ood"
+    },
+    "neural_architecture": {
+      "complete": true,
+      "models": [
+        "history GRU",
+        "vision-context CNN",
+        "fusion CNN+GRU"
+      ],
+      "context_dimensions": 8
+    },
+    "motion_prediction_training": {
+      "complete": true,
+      "max_epochs": 40,
+      "training_seed": 0,
+      "checkpoint_selection": "validation only"
+    },
+    "contact_image_alignment": {
+      "complete": true,
+      "scope": "ideal downward current-contact camera; six synthetic poses/12 ground patch ID checks; no forward-camera registration"
+    },
+    "online_adaptation": {
+      "complete": true,
+      "scope": "frozen weights, hidden context updates each 0.1 s; fresh MuJoCo run plus causal and streaming equivalence checks"
+    }
+  },
+  "native_gui_check": {
+    "steps": 75,
+    "complete": false,
+    "weights_unchanged": true
+  }
+}

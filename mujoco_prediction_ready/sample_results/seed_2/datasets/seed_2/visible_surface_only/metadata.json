@@ -1,0 +1,100 @@
+{
+  "case": "visible_surface_only",
+  "seed": 2,
+  "event_time": null,
+  "first_post_patch_contact": 8.4,
+  "valid": true,
+  "finite": true,
+  "within_contact_area_margin": true,
+  "min_body_height": 0.09998684555632704,
+  "tire_contact_fraction": 1.0,
+  "nominal_command_units": "N; actual torque conversion and hidden efficiency applied only inside plant",
+  "planned_commands_sha256": "1a8a93ebe2d5c0d6514d5aeac03724b3c0824486fc5fd7f9f6f128398ca4ff44",
+  "observations_sha256": "a59716e655d2648a6c34ae64f5bce4956925400c96a6f6980fe398806f7e74cf",
+  "source_sha256": {
+    "engine.py": "6325d0a0a2e398b6f6855c013a774ad72d095323cabcb21ee200fc55cdeec80a",
+    "robot.xml": "f2b28f9b8c7790a658fc2fd9b12d403f91ee465bfcba5e22129102875604573c",
+    "surfaces.py": "7cebc74146f122d405cf62d3fd148adf32dade45d6825dd533fcc20b2e7c57fc",
+    "appearance.py": "cd4f09364791dc81659c8188e21ab8ec5ab86415c699f4ddf15d332f77f35024",
+    "control_core.py": "70c63472f42a2abd7ac62e2adc6251598bde71ab26a99722a3445ce821ea4781",
+    "run_prediction.py": "1b0cd9323980578700ead9c292af2cc54ffd3ef20970c8a647b75d57c19b7af3",
+    "predictors.py": "d6fa6b47e9f2284ccba1f9da85c1d47528a8595cf104808e1e3f86c7193fc6ee"
+  },
+  "configuration": {
+    "dt": 0.02,
+    "duration": 16.0,
+    "change_time": 8.0,
+    "scenario": "left_motor_drop",
+    "playback_speed": 1.0,
+    "physics": {
+      "mass": 10.209176270169245,
+      "inertia": 0.22714738329666664,
+      "half_track": 0.2,
+      "linear_drag": 6.178788701933261,
+      "yaw_drag": 0.8855750334457411,
+      "gravity": 9.81
+    },
+    "reference": {
+      "path": "straight",
+      "speed": 0.8,
+      "speed_amplitude": 0.15,
+      "speed_frequency": 0.6,
+      "radius": 3.0
+    },
+    "measurement_noise": {
+      "std": [
+        0.002,
+        0.002,
+        0.002,
+        0.01,
+        0.01
+      ]
+    },
+    "disturbance": {
+      "left_efficiency": 0.5,
+      "payload_multiplier": 2.0,
+      "slope_degrees": 2.0,
+      "friction_coefficient": 0.025
+    },
+    "controller": {
+      "position_gain": 1.0,
+      "lateral_gain": 1.5,
+      "heading_gain": 2.0,
+      "speed_gain": 2.0,
+      "yaw_rate_gain": 5.0,
+      "speed_integral_gain": 10.0,
+      "yaw_integral_gain": 1.0,
+      "max_speed": 1.5,
+      "max_yaw_rate": 1.0,
+      "max_command": 6.0
+    },
+    "estimator": {
+      "min_window": 40,
+      "max_window": 160,
+      "difference_floor": 0.1,
+      "noise_multiplier": 4.0,
+      "trigger_updates": 5,
+      "min_command_rms": 0.1,
+      "eta_min": 0.2,
+      "eta_max": 1.5
+    },
+    "evaluation": {
+      "position_tolerance": 0.05,
+      "heading_tolerance_degrees": 2.0,
+      "speed_tolerance": 0.05,
+      "hold_duration": 1.0
+    },
+    "physics_dt": 0.002,
+    "wheel_radius": 0.1,
+    "settle_seconds": 1.0,
+    "calibration_seconds": 16.0,
+    "low_friction": 0.08,
+    "ramp_seconds": 2.0,
+    "plant_drag": [
+      4.0,
+      0.8
+    ],
+    "vision_low_friction": 0.02,
+    "visualize_hidden_disturbance": false
+  }
+}

@@ -1,0 +1,6 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.7.1+cpu
+numpy>=2,<3
+mujoco>=3.16,<4
+matplotlib>=3.9,<4
+pillow>=10,<14

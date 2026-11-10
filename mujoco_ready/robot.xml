@@ -1,0 +1,78 @@
+<mujoco model="contact_driven_differential_robot">
+  <compiler angle="radian" autolimits="true"/>
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" gravity="0 0 -9.81"
+          iterations="80" tolerance="1e-10"/>
+  <size nconmax="200" njmax="1000"/>
+  <visual>
+    <global offwidth="1280" offheight="720"/>
+    <headlight ambient="0.35 0.35 0.35" diffuse="0.55 0.55 0.55" specular="0.2 0.2 0.2"/>
+    <rgba haze="0.85 0.9 0.95 1"/>
+    <quality shadowsize="2048"/>
+  </visual>
+  <statistic center="1 0 0.25" extent="3"/>
+  <default>
+    <joint damping="0" armature="0"/>
+    <geom condim="3" solref="0.008 1" solimp="0.95 0.99 0.001" friction="0.8 0.001 0.0001"/>
+    <default class="wheel">
+      <!-- Higher priority than floor: the tire defines its own traction. -->
+      <!-- Crowned tire: one smooth contact instead of a cylinder's two sharp
+           edge contacts, which otherwise create excessive steering scrub. -->
+      <geom type="ellipsoid" size="0.1 0.1 0.025" euler="1.570796326794897 0 0"
+            mass="0.18" priority="2" friction="0.8 0.001 0.0001" rgba="0.12 0.14 0.17 1"/>
+    </default>
+    <default class="support">
+      <!-- Spherical sliding supports, not independently rolling caster joints. -->
+      <geom type="sphere" size="0.035" mass="0.02" priority="2"
+            friction="0.001 0.0001 0.0001" rgba="0.55 0.58 0.63 1"/>
+    </default>
+    <default class="decoration">
+      <geom contype="0" conaffinity="0" mass="0"/>
+    </default>
+  </default>
+  <asset>
+    <texture name="sky" type="skybox" builtin="gradient" rgb1="0.65 0.79 0.92" rgb2="0.94 0.96 0.99" width="512" height="3072"/>
+    <texture name="checker" type="2d" builtin="checker" rgb1="0.92 0.93 0.95" rgb2="0.69 0.73 0.78" width="512" height="512"/>
+    <material name="ground_mat" texture="checker" texrepeat="40 40" reflectance="0.05"/>
+  </asset>
+  <worldbody>
+    <light name="key" pos="0 -3 6" dir="0 0.3 -1" diffuse="0.8 0.8 0.8" castshadow="true"/>
+    <light name="fill" pos="3 4 5" dir="-0.3 -0.3 -1" diffuse="0.4 0.4 0.4" castshadow="false"/>
+    <geom name="floor" type="plane" size="30 30 0.1" material="ground_mat" priority="0"/>
+    <body name="chassis" pos="0 0 0.101">
+      <freejoint name="root"/>
+      <geom name="chassis_box" type="box" pos="0 0 0.065" size="0.2 0.145 0.045"
+            mass="9.6" rgba="0.12 0.4 0.68 1"/>
+      <site name="imu" pos="0 0 0" size="0.008" rgba="1 1 0 1"/>
+      <geom name="front_support" class="support" pos="0.175 0 -0.065"/>
+      <geom name="rear_support" class="support" pos="-0.175 0 -0.065"/>
+      <geom name="forward_marker" class="decoration" type="capsule" fromto="0.02 0 0.118 0.165 0 0.118" size="0.012" rgba="1 0.62 0.12 1"/>
+      <geom name="nose_marker" class="decoration" type="sphere" pos="0.173 0 0.118" size="0.022" rgba="1 0.25 0.08 1"/>
+      <camera name="robot_camera" mode="trackcom" pos="1.2 -1.7 1.0" xyaxes="0.82 0.57 0 -0.25 0.36 0.9"/>
+      <body name="left_wheel_body" pos="0 0.2 0">
+        <joint name="left_wheel" type="hinge" axis="0 1 0"/>
+        <geom name="left_tire" class="wheel"/>
+        <geom name="left_hub" class="decoration" type="cylinder" size="0.035 0.026" euler="1.570796326794897 0 0" rgba="0.85 0.87 0.9 1"/>
+        <geom name="left_spoke" class="decoration" type="capsule" fromto="-0.075 0.027 0 0.075 0.027 0" size="0.006" rgba="0.85 0.87 0.9 1"/>
+      </body>
+      <body name="right_wheel_body" pos="0 -0.2 0">
+        <joint name="right_wheel" type="hinge" axis="0 1 0"/>
+        <geom name="right_tire" class="wheel"/>
+        <geom name="right_hub" class="decoration" type="cylinder" size="0.035 0.026" euler="1.570796326794897 0 0" rgba="0.85 0.87 0.9 1"/>
+        <geom name="right_spoke" class="decoration" type="capsule" fromto="-0.075 -0.027 0 0.075 -0.027 0" size="0.006" rgba="0.85 0.87 0.9 1"/>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="left_motor" joint="left_wheel" gear="1" ctrllimited="true" ctrlrange="-0.6 0.6"/>
+    <motor name="right_motor" joint="right_wheel" gear="1" ctrllimited="true" ctrlrange="-0.6 0.6"/>
+  </actuator>
+  <sensor>
+    <!-- xbody selects the chassis frame, not its rotated principal-inertia frame. -->
+    <framepos name="chassis_position" objtype="xbody" objname="chassis"/>
+    <framequat name="chassis_quaternion" objtype="xbody" objname="chassis"/>
+    <velocimeter name="imu_velocity" site="imu"/>
+    <gyro name="imu_gyro" site="imu"/>
+    <jointvel name="left_wheel_velocity" joint="left_wheel"/>
+    <jointvel name="right_wheel_velocity" joint="right_wheel"/>
+  </sensor>
+</mujoco>

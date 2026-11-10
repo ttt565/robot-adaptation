@@ -1,0 +1,470 @@
+{
+  "status": "ready_for_python_2d_simulation",
+  "date": "2026-10-20",
+  "python": "3.12.3 (tags/v3.12.3:f6650f9, Apr  9 2024, 14:05:25) [MSC v.1938 64 bit (AMD64)]",
+  "numpy": "2.5.4",
+  "matplotlib": "3.11.2",
+  "checks": [
+    "nominal noiseless exact reference tracking",
+    "streaming estimator prefix agreement",
+    "low-input guard",
+    "configuration rejection",
+    "actuator and efficiency limits",
+    "independent raw-log score verification",
+    "actual replay frame rendering on straight and circle paths",
+    "hidden native TkAgg canvas"
+  ],
+  "straight_scenarios": 5,
+  "straight_noise_seeds": 3,
+  "controller_methods": 6,
+  "straight_controller_runs": 90,
+  "circle_controller_runs": 6,
+  "all_finite_and_within_command_limits": true,
+  "straight_aggregates": [
+    {
+      "scenario": "none",
+      "methods": {
+        "fixed": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.001011565923623502,
+          "position_rmse_sd": 8.061941826682793e-05,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.0011946746556711163,
+          "position_rmse_sd": 8.302331695479574e-05,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_40": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.022850995550395912,
+          "position_rmse_sd": 0.0013682580837807883,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.011992005329780146,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_80": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.019311099719574894,
+          "position_rmse_sd": 0.0014702308990152296,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0006662225183211193,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_160": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.017495733556986297,
+          "position_rmse_sd": 0.0014000361170495134,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.017495733556986297,
+          "position_rmse_sd": 0.0014000361170495134,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    },
+    {
+      "scenario": "left_motor_drop",
+      "methods": {
+        "fixed": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 0.1288158164744152,
+          "position_rmse_sd": 0.00013291251032059349,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 5.880000000000001,
+          "position_rmse_mean": 0.03918524666834539,
+          "position_rmse_sd": 0.00014876030227717769,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_40": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.024434849308577002,
+          "position_rmse_sd": 0.001376522226127421,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0104374861203642,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_80": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.022659421954850406,
+          "position_rmse_sd": 0.0014288766752309561,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0006662225183211193,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_160": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 3.7200000000000006,
+          "position_rmse_mean": 0.02426769760888443,
+          "position_rmse_sd": 0.0012040406032915426,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.019915993266617398,
+          "position_rmse_sd": 0.0009068165393522549,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    },
+    {
+      "scenario": "payload",
+      "methods": {
+        "fixed": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 10.34,
+          "position_rmse_mean": 0.034602952996908,
+          "position_rmse_sd": 0.00034711471438531104,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.025578592053003838,
+          "position_rmse_sd": 0.000394506118472403,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_40": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.018264402723455583,
+          "position_rmse_sd": 0.0015440516867632626,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.2351765489673551,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_80": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 13.280000000000001,
+          "position_rmse_mean": 0.021477883667901404,
+          "position_rmse_sd": 0.0015485977226360461,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.19875638463246723,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_160": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 14.379999999999999,
+          "position_rmse_mean": 0.032802387559862776,
+          "position_rmse_sd": 0.0010131798068141627,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.1634465911614479,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.023140453176513906,
+          "position_rmse_sd": 0.0019818897177280447,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.25449700199866754,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    },
+    {
+      "scenario": "slope",
+      "methods": {
+        "fixed": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 0.16671903855430004,
+          "position_rmse_sd": 0.000162856196209783,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 4.380000000000001,
+          "position_rmse_mean": 0.03296671984230049,
+          "position_rmse_sd": 0.00021128630290771628,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_40": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 2.4000000000000004,
+          "position_rmse_mean": 0.02737402718413937,
+          "position_rmse_sd": 0.0012917019278217156,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.007550521874306018,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_80": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 2.7799999999999994,
+          "position_rmse_mean": 0.026464405033857125,
+          "position_rmse_sd": 0.0015745707262601288,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0006662225183211193,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_160": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 3.3599999999999994,
+          "position_rmse_mean": 0.031038390836025987,
+          "position_rmse_sd": 0.0014195611650730945,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 3,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 2.4399999999999995,
+          "position_rmse_mean": 0.026157710745291968,
+          "position_rmse_sd": 0.00046959804746937343,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    },
+    {
+      "scenario": "traction_limit",
+      "methods": {
+        "fixed": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 2.343525329079304,
+          "position_rmse_sd": 0.0031926855977755988,
+          "saturation_fraction_mean": 0.6406666666666667,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 2.343386130720759,
+          "position_rmse_sd": 0.0037048475760348668,
+          "saturation_fraction_mean": 0.6557777777777778,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_40": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 2.371823420897194,
+          "position_rmse_sd": 0.013981339103868675,
+          "saturation_fraction_mean": 0.6984444444444445,
+          "eta_protection_fraction_mean": 0.31379080612924715,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_80": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 2.3755603690274483,
+          "position_rmse_sd": 0.01655274163811826,
+          "saturation_fraction_mean": 0.6902222222222222,
+          "eta_protection_fraction_mean": 0.2180768376637797,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_160": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 2.3730928938122022,
+          "position_rmse_sd": 0.012582953168003803,
+          "saturation_fraction_mean": 0.6813333333333333,
+          "eta_protection_fraction_mean": 0.08638685320897181,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive": {
+          "runs": 3,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 2.3730928938122022,
+          "position_rmse_sd": 0.012582953168003803,
+          "saturation_fraction_mean": 0.6937777777777777,
+          "eta_protection_fraction_mean": 0.08949589162780369,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    }
+  ],
+  "circle_aggregates": [
+    {
+      "scenario": "left_motor_drop",
+      "methods": {
+        "fixed": {
+          "runs": 1,
+          "confirmed_or_remained_runs": 0,
+          "confirmation_rate": 0.0,
+          "median_confirmation_delay": null,
+          "position_rmse_mean": 0.08447231513623533,
+          "position_rmse_sd": 0.0,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 1,
+          "confirmed_or_remained_runs": 1,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 5.380000000000001,
+          "position_rmse_mean": 0.03033406596442094,
+          "position_rmse_sd": 0.0,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_40": {
+          "runs": 1,
+          "confirmed_or_remained_runs": 1,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.027276582597535865,
+          "position_rmse_sd": 0.0,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.05862758161225849,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_80": {
+          "runs": 1,
+          "confirmed_or_remained_runs": 1,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.024815920375694307,
+          "position_rmse_sd": 0.0,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.031978680879413725,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "window_160": {
+          "runs": 1,
+          "confirmed_or_remained_runs": 1,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 3.7200000000000006,
+          "position_rmse_mean": 0.02546405512560883,
+          "position_rmse_sd": 0.0,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0006662225183211193,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive": {
+          "runs": 1,
+          "confirmed_or_remained_runs": 1,
+          "confirmation_rate": 1.0,
+          "median_confirmation_delay": 0.0,
+          "position_rmse_mean": 0.022291773793664347,
+          "position_rmse_sd": 0.0,
+          "saturation_fraction_mean": 0.0,
+          "eta_protection_fraction_mean": 0.0006662225183211193,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "core.py": "70c63472f42a2abd7ac62e2adc6251598bde71ab26a99722a3445ce821ea4781",
+    "viewer.py": "2cf3f67b0436e3f9054008a5c792edc01e3e2749f81100f5334984bf0a1f385b",
+    "run_simulation.py": "579e75b10f2c512bf1859535feddf9ae9046335feea75d05b19b689b5bce5d6c",
+    "config.json": "1d36aa924f0da5098baeed4486e2871cf25bfc31f5d470e53d0302e2f7b6f774",
+    "README.md": "f5c461c6eefce4cad9b35d5b2ff5fae3e5fe9b41b8e65fd238877d83f174f39f",
+    "requirements.txt": "6f74e0d76b9c80d4c4f488f67f1ae7e277c2ed6788d5299a3e866803711f7a6b",
+    "start_simulation.cmd": "9d47afa020261cfd6c68cf8ef890254c9422e7e686192a671fbb42ec23f6aef8",
+    "run_batch.cmd": "7958e1295effd9dbf9df3a9009ccc594208cf1dd84bc70f6bf3d6e111441bd90"
+  },
+  "limits": [
+    "Explicit effective parameters, not neural latent learning",
+    "Simplified longitudinal traction cap, no tire spin or lateral slip",
+    "Feedback measurement noise creates estimator bias; adaptation can worsen healthy tracking",
+    "Default traction-limit case is deliberately physically infeasible",
+    "Three paired seeds check execution; they do not establish statistical generalization"
+  ]
+}

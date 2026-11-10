@@ -1,0 +1,332 @@
+{
+  "status": "ready_for_mujoco_simulation",
+  "date": "2026-10-20",
+  "python": "3.12.3 (tags/v3.12.3:f6650f9, Apr  9 2024, 14:05:25) [MSC v.1938 64 bit (AMD64)]",
+  "mujoco": "3.16.0",
+  "headless_comparison_runs_audited": 30,
+  "live_viewer_full_run_seconds": 15,
+  "live_viewer_exit_code": 0,
+  "partial_close_check": {
+    "status": "partial",
+    "seconds": 1.98,
+    "exit_code": 0
+  },
+  "checks": [
+    "real free-base hinge-wheel contact dynamics",
+    "settle, forward and yaw signs",
+    "unscaled command vs executed torque isolation",
+    "finite state logs and actuator limits",
+    "actual mixed contact friction change",
+    "matched controller paired-noise comparison",
+    "headless without OpenGL Renderer",
+    "native viewer normal and partial closure",
+    "independent score recomputation"
+  ],
+  "step_size_check": {
+    "fixed": {
+      "dt002_position_rmse": 0.24542769941233172,
+      "dt001_position_rmse": 0.2454575063512891,
+      "rms_position_difference": 0.00011801318447884939,
+      "maximum_position_difference": 0.0003679873952819506
+    },
+    "adaptive": {
+      "dt002_position_rmse": 0.021860849408649876,
+      "dt001_position_rmse": 0.02186192870030056,
+      "rms_position_difference": 0.0001684391264035948,
+      "maximum_position_difference": 0.0003679873952819506
+    }
+  },
+  "low_friction_absent_contact_samples_of_1500": {
+    "fixed": 4,
+    "pi": 2,
+    "window_40": 4,
+    "window_80": 1,
+    "window_160": 1,
+    "adaptive": 1
+  },
+  "contact_mu_nan_meaning": "No tire-ground contact at that sampled instant; friction audit applies to existing contacts.",
+  "robot_mass_kg": 9.999999999999998,
+  "effective_nominal_parameters": {
+    "mass": 10.209252176556305,
+    "inertia": 0.22338476331153348,
+    "half_track": 0.2,
+    "linear_drag": 4.1248642387390495,
+    "yaw_drag": 0.8040083695793189,
+    "gravity": 9.81
+  },
+  "default_metrics": {
+    "fixed": {
+      "position_rmse": 0.2454556353459824,
+      "steady_position_rmse": 0.25973582504742854,
+      "peak_position_error": 0.34004401755382463,
+      "heading_rmse_degrees": 3.112080903287243,
+      "speed_rmse": 0.021993331683985505,
+      "tracking_confirmation_delay": null,
+      "tracking_status": "not_recovered",
+      "in_band_fraction_after_change": 0.019090909090909092,
+      "prediction_speed_rmse": 0.01051040369022029,
+      "prediction_yaw_rmse": 0.03212442490116273,
+      "same_log_nominal_speed_rmse": 0.01051040369022029,
+      "same_log_nominal_yaw_rmse": 0.03212442490116273,
+      "command_saturation_fraction": 0.0,
+      "max_absolute_command": 5.091089235214279,
+      "eta_protection_fraction": 0.0,
+      "final_eta_raw": [
+        1.0,
+        1.0
+      ],
+      "final_eta_used": [
+        1.0,
+        1.0
+      ],
+      "alarm_times": [],
+      "pre_change_alarm_count": 0,
+      "skipped_side_updates": [
+        0,
+        0
+      ],
+      "finite": true,
+      "complete": true,
+      "completed_seconds": 30.0,
+      "score_interval_seconds": [
+        8.0,
+        30.0
+      ],
+      "physics_backend": "MuJoCo",
+      "mujoco_version": "3.16.0",
+      "minimum_chassis_height": 0.09994587971156889,
+      "maximum_abs_slip_proxy": 0.3447700484694811
+    },
+    "pi": {
+      "position_rmse": 0.05009557696775603,
+      "steady_position_rmse": 0.03507542273810196,
+      "peak_position_error": 0.1268252026994579,
+      "heading_rmse_degrees": 1.9136850809682262,
+      "speed_rmse": 0.015409464532125643,
+      "tracking_confirmation_delay": 6.84,
+      "tracking_status": "confirmed",
+      "in_band_fraction_after_change": 0.6345454545454545,
+      "prediction_speed_rmse": 0.010470113577529428,
+      "prediction_yaw_rmse": 0.03212138746261468,
+      "same_log_nominal_speed_rmse": 0.010470113577529428,
+      "same_log_nominal_yaw_rmse": 0.03212138746261468,
+      "command_saturation_fraction": 0.0,
+      "max_absolute_command": 5.1048970082322835,
+      "eta_protection_fraction": 0.0,
+      "final_eta_raw": [
+        1.0,
+        1.0
+      ],
+      "final_eta_used": [
+        1.0,
+        1.0
+      ],
+      "alarm_times": [],
+      "pre_change_alarm_count": 0,
+      "skipped_side_updates": [
+        0,
+        0
+      ],
+      "finite": true,
+      "complete": true,
+      "completed_seconds": 30.0,
+      "score_interval_seconds": [
+        8.0,
+        30.0
+      ],
+      "physics_backend": "MuJoCo",
+      "mujoco_version": "3.16.0",
+      "minimum_chassis_height": 0.09994787433480173,
+      "maximum_abs_slip_proxy": 0.23563892701341094
+    },
+    "window_40": {
+      "position_rmse": 0.023180013366622593,
+      "steady_position_rmse": 0.020651445059017292,
+      "peak_position_error": 0.0447225355392044,
+      "heading_rmse_degrees": 0.557907932353613,
+      "speed_rmse": 0.005244242911705196,
+      "tracking_confirmation_delay": 2.0999999999999996,
+      "tracking_status": "confirmed",
+      "in_band_fraction_after_change": 0.9727272727272728,
+      "prediction_speed_rmse": 0.010161074079836782,
+      "prediction_yaw_rmse": 0.009894407612016681,
+      "same_log_nominal_speed_rmse": 0.0103180938226159,
+      "same_log_nominal_yaw_rmse": 0.031929003823214445,
+      "command_saturation_fraction": 0.0,
+      "max_absolute_command": 5.328047570596534,
+      "eta_protection_fraction": 0.001998667554963358,
+      "final_eta_raw": [
+        0.6285337422971241,
+        1.2547624216389168
+      ],
+      "final_eta_used": [
+        0.6285337422971241,
+        1.2547624216389168
+      ],
+      "alarm_times": [],
+      "pre_change_alarm_count": 0,
+      "skipped_side_updates": [
+        0,
+        0
+      ],
+      "finite": true,
+      "complete": true,
+      "completed_seconds": 30.0,
+      "score_interval_seconds": [
+        8.0,
+        30.0
+      ],
+      "physics_backend": "MuJoCo",
+      "mujoco_version": "3.16.0",
+      "minimum_chassis_height": 0.09997197762368515,
+      "maximum_abs_slip_proxy": 0.24943848914885125
+    },
+    "window_80": {
+      "position_rmse": 0.023396594360487733,
+      "steady_position_rmse": 0.016591495412199297,
+      "peak_position_error": 0.060428277757744335,
+      "heading_rmse_degrees": 0.8424718405455615,
+      "speed_rmse": 0.006273058952980929,
+      "tracking_confirmation_delay": 3.460000000000001,
+      "tracking_status": "confirmed",
+      "in_band_fraction_after_change": 0.9081818181818182,
+      "prediction_speed_rmse": 0.010050765700339174,
+      "prediction_yaw_rmse": 0.010065037258320053,
+      "same_log_nominal_speed_rmse": 0.010364465844763056,
+      "same_log_nominal_yaw_rmse": 0.03196095816670896,
+      "command_saturation_fraction": 0.0,
+      "max_absolute_command": 5.091089235214279,
+      "eta_protection_fraction": 0.0,
+      "final_eta_raw": [
+        0.5913862993282915,
+        1.177934445962629
+      ],
+      "final_eta_used": [
+        0.5913862993282915,
+        1.177934445962629
+      ],
+      "alarm_times": [],
+      "pre_change_alarm_count": 0,
+      "skipped_side_updates": [
+        0,
+        0
+      ],
+      "finite": true,
+      "complete": true,
+      "completed_seconds": 30.0,
+      "score_interval_seconds": [
+        8.0,
+        30.0
+      ],
+      "physics_backend": "MuJoCo",
+      "mujoco_version": "3.16.0",
+      "minimum_chassis_height": 0.09997175915657892,
+      "maximum_abs_slip_proxy": 0.2383565585400338
+    },
+    "window_160": {
+      "position_rmse": 0.02956861193067237,
+      "steady_position_rmse": 0.014642832911558396,
+      "peak_position_error": 0.0891906099603174,
+      "heading_rmse_degrees": 1.2084058998759628,
+      "speed_rmse": 0.00890754759140842,
+      "tracking_confirmation_delay": 4.98,
+      "tracking_status": "confirmed",
+      "in_band_fraction_after_change": 0.8390909090909091,
+      "prediction_speed_rmse": 0.01002667165863055,
+      "prediction_yaw_rmse": 0.010343208820087567,
+      "same_log_nominal_speed_rmse": 0.010418508827250952,
+      "same_log_nominal_yaw_rmse": 0.03201122987551868,
+      "command_saturation_fraction": 0.0,
+      "max_absolute_command": 5.199310288788556,
+      "eta_protection_fraction": 0.0,
+      "final_eta_raw": [
+        0.5757672751806342,
+        1.1397907258364945
+      ],
+      "final_eta_used": [
+        0.5757672751806342,
+        1.1397907258364945
+      ],
+      "alarm_times": [],
+      "pre_change_alarm_count": 0,
+      "skipped_side_updates": [
+        0,
+        0
+      ],
+      "finite": true,
+      "complete": true,
+      "completed_seconds": 30.0,
+      "score_interval_seconds": [
+        8.0,
+        30.0
+      ],
+      "physics_backend": "MuJoCo",
+      "mujoco_version": "3.16.0",
+      "minimum_chassis_height": 0.09997197505968092,
+      "maximum_abs_slip_proxy": 0.2383565585400338
+    },
+    "adaptive": {
+      "position_rmse": 0.02019725522313174,
+      "steady_position_rmse": 0.014643514507093287,
+      "peak_position_error": 0.05250637070466297,
+      "heading_rmse_degrees": 0.7284429405185704,
+      "speed_rmse": 0.0056937761342473825,
+      "tracking_confirmation_delay": 2.960000000000001,
+      "tracking_status": "confirmed",
+      "in_band_fraction_after_change": 0.9318181818181818,
+      "prediction_speed_rmse": 0.009999718987344726,
+      "prediction_yaw_rmse": 0.009927962455323801,
+      "same_log_nominal_speed_rmse": 0.010395075346222575,
+      "same_log_nominal_yaw_rmse": 0.031957620965370845,
+      "command_saturation_fraction": 0.0,
+      "max_absolute_command": 5.091089235214279,
+      "eta_protection_fraction": 0.0,
+      "final_eta_raw": [
+        0.575812030225251,
+        1.1397805738127287
+      ],
+      "final_eta_used": [
+        0.575812030225251,
+        1.1397805738127287
+      ],
+      "alarm_times": [
+        8.52
+      ],
+      "pre_change_alarm_count": 0,
+      "skipped_side_updates": [
+        0,
+        0
+      ],
+      "finite": true,
+      "complete": true,
+      "completed_seconds": 30.0,
+      "score_interval_seconds": [
+        8.0,
+        30.0
+      ],
+      "physics_backend": "MuJoCo",
+      "mujoco_version": "3.16.0",
+      "minimum_chassis_height": 0.09997136060465826,
+      "maximum_abs_slip_proxy": 0.2383565585400338
+    }
+  },
+  "source_sha256": {
+    "robot.xml": "486ad3bd56c96729011f37376edc0904bf7762d253fd0e2c2942828c954b8603",
+    "engine.py": "6edfd8dfc84efc113a998f72c51243b5cb3ab8cf7f4216ab4f7ca33d77ab9655",
+    "run_mujoco.py": "60f0f82ff78ae18d7864cc0da94802f878e6294a2300b2fc48b828f7e4bb2c8e",
+    "control_core.py": "70c63472f42a2abd7ac62e2adc6251598bde71ab26a99722a3445ce821ea4781",
+    "plotting.py": "2cf3f67b0436e3f9054008a5c792edc01e3e2749f81100f5334984bf0a1f385b",
+    "config.json": "601772137f55f3c9cf895dad3af11cd233459d76489a5992e797cc0939a00764",
+    "README.md": "3f6da2b19f65f7f33809d3e5df6e56c645660ab5cf10e9985c82ea23b98cd724",
+    "requirements.txt": "196d0025bf8514bb849894f4273884fa3d1f867ac942238d1954a4ae4c74a421",
+    "start_mujoco.cmd": "a4458b7d81e35c2f2e2432a95505d745a0f9327751c519d4a159c4f712a0a926",
+    "run_compare.cmd": "a711c65627988d61100f516bec3f04f083842f366658169d70788704524fecc9"
+  },
+  "limits": [
+    "Initial backend supports none/motor drop/contact friction only, no payload or slope yet",
+    "Explicit effective parameter state, not neural latent",
+    "Healthy adaptation has a noise-induced cost",
+    "One preset noise seed per comparison is an execution check, not robust research validation",
+    "Low friction changes contact physics, but tracking recovery does not alone establish slip robustness"
+  ]
+}

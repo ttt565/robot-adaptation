@@ -1,0 +1,16 @@
+{
+  "position_rmse": 0.0075103177064160835,
+  "score_interval_seconds": [
+    0,
+    18.0
+  ],
+  "first_visual_change": null,
+  "first_motion_anomaly": null,
+  "first_slip_evidence": null,
+  "post_patch_first_contact": 5.46,
+  "physical_change_time_evaluation_only": null,
+  "complete": true,
+  "camera_frames": 90,
+  "any_motion_anomaly": false,
+  "any_slip_evidence": false
+}

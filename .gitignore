@@ -1,0 +1,32 @@
+# Python environments and bytecode
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Local editor, operating system, and environment settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+.env
+.env.*
+
+# Regenerated experiment outputs; bundled reference samples stay tracked
+runs/
+results_*/
+validation_*/
+/simulation_ready/results/
+/mujoco_ready/results/
+/mujoco_vision_ready/results/
+/mujoco_vision_control_ready/results/
+/mujoco_prediction_ready/results/
+/mujoco_learned_ready/data/
+/mujoco_learned_ready/smoke_data/
+/mujoco_vision_ready/sample_results/**/camera/*.png
+/mujoco_vision_control_ready/sample_results/**/camera/*.png
+/mujoco_prediction_ready/sample_results/**/*_camera.png
