@@ -1,0 +1,434 @@
+{
+  "protocol": {
+    "simulator": "simulation_ready/core.py, unmodified",
+    "seeds": 10,
+    "path": "straight",
+    "change_time": 8.0,
+    "noise_sweep_mode": "window_160",
+    "eta_before_change": "mean raw estimate for 4 s <= t < change",
+    "eta_after_change": "mean raw estimate for t >= change + 5 s",
+    "position_rmse": "core.tracking_metrics position_rmse (t > change), in millimetres",
+    "instrument": "previous command u[t-1]; see iv_estimator.py",
+    "paired_noise": "every method sees the same measurement-noise seeds"
+  },
+  "noise_sweep": [
+    {
+      "noise_scale": 0.0,
+      "least_squares": {
+        "runs": 10,
+        "eta_before_change_mean": [
+          1.0,
+          1.0
+        ],
+        "eta_after_change_mean": [
+          1.0,
+          1.0
+        ],
+        "position_rmse_mm_mean": 0.0,
+        "position_rmse_mm_sd": 0.0,
+        "confirmed_or_remained_runs": 10,
+        "median_confirmation_delay": 0.0,
+        "pre_change_alarm_count_mean": 0.0
+      },
+      "instrumental_variable": {
+        "runs": 10,
+        "eta_before_change_mean": [
+          1.0,
+          1.0
+        ],
+        "eta_after_change_mean": [
+          1.0,
+          1.0
+        ],
+        "position_rmse_mm_mean": 0.0,
+        "position_rmse_mm_sd": 0.0,
+        "confirmed_or_remained_runs": 10,
+        "median_confirmation_delay": 0.0,
+        "pre_change_alarm_count_mean": 0.0
+      }
+    },
+    {
+      "noise_scale": 0.5,
+      "least_squares": {
+        "runs": 10,
+        "eta_before_change_mean": [
+          1.0306827054207586,
+          1.0320539980704044
+        ],
+        "eta_after_change_mean": [
+          1.0292323658205123,
+          1.0288459203273574
+        ],
+        "position_rmse_mm_mean": 4.706822527368944,
+        "position_rmse_mm_sd": 0.32545446254141863,
+        "confirmed_or_remained_runs": 10,
+        "median_confirmation_delay": 0.0,
+        "pre_change_alarm_count_mean": 0.0
+      },
+      "instrumental_variable": {
+        "runs": 10,
+        "eta_before_change_mean": [
+          1.001886161215484,
+          1.0007399974025168
+        ],
+        "eta_after_change_mean": [
+          0.9994935401542208,
+          0.9996168615389802
+        ],
+        "position_rmse_mm_mean": 0.8035532087245374,
+        "position_rmse_mm_sd": 0.10402215055305468,
+        "confirmed_or_remained_runs": 10,
+        "median_confirmation_delay": 0.0,
+        "pre_change_alarm_count_mean": 0.0
+      }
+    },
+    {
+      "noise_scale": 1.0,
+      "least_squares": {
+        "runs": 10,
+        "eta_before_change_mean": [
+          1.1159636070685104,
+          1.1210733244961868
+        ],
+        "eta_after_change_mean": [
+          1.1088727780655934,
+          1.1072789225509587
+        ],
+        "position_rmse_mm_mean": 17.109520952593243,
+        "position_rmse_mm_sd": 1.022333231937959,
+        "confirmed_or_remained_runs": 10,
+        "median_confirmation_delay": 0.0,
+        "pre_change_alarm_count_mean": 0.0
+      },
+      "instrumental_variable": {
+        "runs": 10,
+        "eta_before_change_mean": [
+          1.0068146117391097,
+          1.0023687912825783
+        ],
+        "eta_after_change_mean": [
+          0.9980252195882899,
+          0.9982210790238787
+        ],
+        "position_rmse_mm_mean": 2.564157440017786,
+        "position_rmse_mm_sd": 0.5022152104427408,
+        "confirmed_or_remained_runs": 10,
+        "median_confirmation_delay": 0.0,
+        "pre_change_alarm_count_mean": 0.0
+      }
+    },
+    {
+      "noise_scale": 2.0,
+      "least_squares": {
+        "runs": 10,
+        "eta_before_change_mean": [
+          1.3941671069058856,
+          1.4091230469590381
+        ],
+        "eta_after_change_mean": [
+          1.3526965846493402,
+          1.3479364148293178
+        ],
+        "position_rmse_mm_mean": 51.45749691291405,
+        "position_rmse_mm_sd": 1.4311851720274498,
+        "confirmed_or_remained_runs": 10,
+        "median_confirmation_delay": 5.68,
+        "pre_change_alarm_count_mean": 0.0
+      },
+      "instrumental_variable": {
+        "runs": 10,
+        "eta_before_change_mean": [
+          1.0261028728581723,
+          1.009209387184487
+        ],
+        "eta_after_change_mean": [
+          0.9927626458581846,
+          0.9927811408332726
+        ],
+        "position_rmse_mm_mean": 9.712814043970843,
+        "position_rmse_mm_sd": 2.3505763523575256,
+        "confirmed_or_remained_runs": 10,
+        "median_confirmation_delay": 0.0,
+        "pre_change_alarm_count_mean": 0.0
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario": "none",
+      "methods": {
+        "fixed": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0,
+            1.0
+          ],
+          "eta_after_change_mean": [
+            1.0,
+            1.0
+          ],
+          "position_rmse_mm_mean": 0.9421395633003063,
+          "position_rmse_mm_sd": 0.08281375977447869,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0,
+            1.0
+          ],
+          "eta_after_change_mean": [
+            1.0,
+            1.0
+          ],
+          "position_rmse_mm_mean": 1.113203334577761,
+          "position_rmse_mm_sd": 0.08802553942101417,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive_least_squares": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.1159636070685104,
+            1.1210733244961868
+          ],
+          "eta_after_change_mean": [
+            1.1088727780655934,
+            1.1072789225509587
+          ],
+          "position_rmse_mm_mean": 17.109520952593243,
+          "position_rmse_mm_sd": 1.022333231937959,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive_instrumental": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0068146117391097,
+            1.0023687912825783
+          ],
+          "eta_after_change_mean": [
+            0.9980252195882899,
+            0.9982210790238787
+          ],
+          "position_rmse_mm_mean": 2.564157440017786,
+          "position_rmse_mm_sd": 0.5022152104427408,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    },
+    {
+      "scenario": "left_motor_drop",
+      "methods": {
+        "fixed": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0,
+            1.0
+          ],
+          "eta_after_change_mean": [
+            1.0,
+            1.0
+          ],
+          "position_rmse_mm_mean": 128.73777135768347,
+          "position_rmse_mm_sd": 0.18747074803228075,
+          "confirmed_or_remained_runs": 0,
+          "median_confirmation_delay": null,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0,
+            1.0
+          ],
+          "eta_after_change_mean": [
+            1.0,
+            1.0
+          ],
+          "position_rmse_mm_mean": 39.31777980801359,
+          "position_rmse_mm_sd": 0.18843402458539824,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 5.880000000000001,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive_least_squares": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.1159636070685104,
+            1.1210733244961868
+          ],
+          "eta_after_change_mean": [
+            0.5544657947251326,
+            1.107297848039123
+          ],
+          "position_rmse_mm_mean": 19.47029095750938,
+          "position_rmse_mm_sd": 0.7380085385928397,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive_instrumental": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0068146117391097,
+            1.0023687912825783
+          ],
+          "eta_after_change_mean": [
+            0.49901201316806754,
+            0.9982143051566441
+          ],
+          "position_rmse_mm_mean": 6.152246560329401,
+          "position_rmse_mm_sd": 1.2855281391338096,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    },
+    {
+      "scenario": "slope",
+      "methods": {
+        "fixed": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0,
+            1.0
+          ],
+          "eta_after_change_mean": [
+            1.0,
+            1.0
+          ],
+          "position_rmse_mm_mean": 166.4648903980736,
+          "position_rmse_mm_sd": 0.29518221220477825,
+          "confirmed_or_remained_runs": 0,
+          "median_confirmation_delay": null,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0,
+            1.0
+          ],
+          "eta_after_change_mean": [
+            1.0,
+            1.0
+          ],
+          "position_rmse_mm_mean": 32.94207102741559,
+          "position_rmse_mm_sd": 0.24476342796177744,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 4.390000000000001,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive_least_squares": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.1159636070685104,
+            1.1210733244961868
+          ],
+          "eta_after_change_mean": [
+            0.5254063622018614,
+            0.5247099677465399
+          ],
+          "position_rmse_mm_mean": 26.28890990250945,
+          "position_rmse_mm_sd": 1.5687087338302383,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 2.4399999999999995,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive_instrumental": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0068146117391097,
+            1.0023687912825783
+          ],
+          "eta_after_change_mean": [
+            0.4746674741039425,
+            0.47484266039721323
+          ],
+          "position_rmse_mm_mean": 14.910905353180018,
+          "position_rmse_mm_sd": 0.987544092043336,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 1.3900000000000006,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    },
+    {
+      "scenario": "payload",
+      "methods": {
+        "fixed": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0,
+            1.0
+          ],
+          "eta_after_change_mean": [
+            1.0,
+            1.0
+          ],
+          "position_rmse_mm_mean": 34.78689065277105,
+          "position_rmse_mm_sd": 0.30440930183154974,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 10.35,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "pi": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0,
+            1.0
+          ],
+          "eta_after_change_mean": [
+            1.0,
+            1.0
+          ],
+          "position_rmse_mm_mean": 25.6726649291177,
+          "position_rmse_mm_sd": 0.2569742931550643,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive_least_squares": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.1159636070685104,
+            1.1210733244961868
+          ],
+          "eta_after_change_mean": [
+            1.3812251832910314,
+            1.3776414646279513
+          ],
+          "position_rmse_mm_mean": 24.15076929808901,
+          "position_rmse_mm_sd": 1.4376551556272836,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        },
+        "adaptive_instrumental": {
+          "runs": 10,
+          "eta_before_change_mean": [
+            1.0068146117391097,
+            1.0023687912825783
+          ],
+          "eta_after_change_mean": [
+            1.1445469427361208,
+            1.1432988312321306
+          ],
+          "position_rmse_mm_mean": 23.7534225404456,
+          "position_rmse_mm_sd": 1.9002292358780402,
+          "confirmed_or_remained_runs": 10,
+          "median_confirmation_delay": 0.0,
+          "pre_change_alarm_count_mean": 0.0
+        }
+      }
+    }
+  ]
+}
