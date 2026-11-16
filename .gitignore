@@ -25,6 +25,7 @@ validation_*/
 /mujoco_vision_ready/results/
 /mujoco_vision_control_ready/results/
 /mujoco_prediction_ready/results/
+/followup_checks/results/
 /mujoco_learned_ready/data/
 /mujoco_learned_ready/smoke_data/
 /mujoco_vision_ready/sample_results/**/camera/*.png
