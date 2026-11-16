@@ -1,0 +1,4012 @@
+{
+  "protocol": {
+    "confirmatory_set": "new held-out episodes (set = new); statements fixed beforehand in followup_checks/README.md",
+    "primary_explicit_variant": "explicit_adaptive",
+    "explicit_variants": [
+      "explicit_adaptive",
+      "explicit_adaptive_alarm_0.2s",
+      "explicit_window_0.8s",
+      "explicit_window_1.6s",
+      "explicit_window_3.2s"
+    ],
+    "gru_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "errors": "mean over episodes of the per-episode 0.5 s forecast RMSE, [speed m/s, yaw rate rad/s]",
+    "parts": {
+      "all": "every scored origin",
+      "early": "first 1.5 s after the change",
+      "late": "later than 1.5 s after the change"
+    },
+    "ratios": "geometric mean over episodes; interval = 95% percentile bootstrap over episodes, GRU averaged over seeds; range_across_seeds = the same ratio for each training seed separately",
+    "training_motor_efficiencies": [
+      0.5311011793646901,
+      0.5768006622151773,
+      0.6144356828238711,
+      0.6253816938572414,
+      0.6270579525164304,
+      0.6881129902876317
+    ],
+    "mujoco_version": "3.10.0",
+    "reference_check": {
+      "stored_mujoco_version": "3.16.0 (mujoco_ready/ready_check.json)",
+      "calibration_abs_difference": {
+        "mass": 2.6464445213036925e-07,
+        "inertia": 2.9223386155408093e-08,
+        "linear_drag": 3.573787488164726e-09,
+        "yaw_drag": 2.5193248043287042e-08
+      },
+      "event_time_max_difference": 0.0,
+      "held_out_episodes_compared": 24,
+      "held_out_episodes_matching": 23,
+      "match_tolerance": 0.0001,
+      "diverged": [
+        {
+          "id": "ood_003",
+          "max_difference": 0.012924154590661832,
+          "first_seconds": 8.200000000000001
+        }
+      ]
+    }
+  },
+  "training": {
+    "model": "history",
+    "parameter_count": 7488,
+    "torch_version": "2.2.2",
+    "threads_per_seed": 1,
+    "protocol": {
+      "source": "learning.py model, loss, optimiser, windows and normalisation, unchanged",
+      "max_epochs": 600,
+      "patience": 50,
+      "min_epochs": 40,
+      "selection": "epoch with the lowest validation loss",
+      "improvement_threshold": 1e-06,
+      "training_episodes": 48,
+      "validation_episodes": 12
+    },
+    "seeds": [
+      {
+        "seed": 0,
+        "epochs_run": 160,
+        "best_epoch": 110,
+        "best_validation_loss": 0.31168851057688396,
+        "validation_loss_at_epoch_40": 0.34736881256103513,
+        "stopped_by_patience": true,
+        "seconds": 83.196135821
+      },
+      {
+        "seed": 1,
+        "epochs_run": 177,
+        "best_epoch": 127,
+        "best_validation_loss": 0.31092630823453266,
+        "validation_loss_at_epoch_40": 0.34773614406585696,
+        "stopped_by_patience": true,
+        "seconds": 93.571067446
+      },
+      {
+        "seed": 2,
+        "epochs_run": 161,
+        "best_epoch": 111,
+        "best_validation_loss": 0.3130370616912842,
+        "validation_loss_at_epoch_40": 0.3458050409952799,
+        "stopped_by_patience": true,
+        "seconds": 84.786442509
+      },
+      {
+        "seed": 3,
+        "epochs_run": 150,
+        "best_epoch": 100,
+        "best_validation_loss": 0.3063583413759867,
+        "validation_loss_at_epoch_40": 0.32983320554097495,
+        "stopped_by_patience": true,
+        "seconds": 75.569952255
+      },
+      {
+        "seed": 4,
+        "epochs_run": 181,
+        "best_epoch": 131,
+        "best_validation_loss": 0.31144694089889524,
+        "validation_loss_at_epoch_40": 0.3417062481244405,
+        "stopped_by_patience": true,
+        "seconds": 113.30801036899999
+      },
+      {
+        "seed": 5,
+        "epochs_run": 192,
+        "best_epoch": 142,
+        "best_validation_loss": 0.31511067946751914,
+        "validation_loss_at_epoch_40": 0.34581050475438435,
+        "stopped_by_patience": true,
+        "seconds": 115.026373032
+      },
+      {
+        "seed": 6,
+        "epochs_run": 168,
+        "best_epoch": 118,
+        "best_validation_loss": 0.30831872622172035,
+        "validation_loss_at_epoch_40": 0.3396838823954264,
+        "stopped_by_patience": true,
+        "seconds": 104.468300877
+      },
+      {
+        "seed": 7,
+        "epochs_run": 170,
+        "best_epoch": 120,
+        "best_validation_loss": 0.3063936233520508,
+        "validation_loss_at_epoch_40": 0.34528060754140216,
+        "stopped_by_patience": true,
+        "seconds": 103.840745086
+      }
+    ],
+    "stored_model": {
+      "checkpoint": "mujoco_learned_ready/results/trained/checkpoints/history.pt",
+      "best_epoch": 40,
+      "episodes_compared": 24,
+      "episodes_matching_stored_forecasts": 23,
+      "tolerance": 1e-05,
+      "different": [
+        {
+          "id": "ood_003",
+          "max_difference": 0.004799220710992813
+        }
+      ]
+    }
+  },
+  "sets": {
+    "new": {
+      "normal": {
+        "episodes": 12,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.0074067427449407315,
+              0.0021353067042809044
+            ],
+            "explicit_adaptive": [
+              0.008545642903051086,
+              0.003211996197405956
+            ],
+            "gru_stored": [
+              0.007743061712076736,
+              0.008611513090751921
+            ],
+            "gru": {
+              "mean": [
+                0.004403823365803139,
+                0.008496864139403123
+              ],
+              "sd_across_seeds": [
+                0.0005309931491491081,
+                0.0004626130382049562
+              ],
+              "min": [
+                0.0037282398527706336,
+                0.007891581619591234
+              ],
+              "max": [
+                0.005492561967085557,
+                0.009420273477667591
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.5022169435451405,
+              "interval": [
+                0.4488179938925219,
+                0.5679102015527656
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.42444569950024263,
+                0.6180199258604817
+              ]
+            },
+            "yaw": {
+              "ratio": 2.6369468677735384,
+              "interval": [
+                2.324114889938368,
+                2.9320343558690194
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                2.425967703418174,
+                2.947523081375323
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 1.1529105743200938,
+              "interval": [
+                1.136178544795531,
+                1.1707865836110636
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 1.549743419515871,
+              "interval": [
+                1.3205352863926227,
+                1.8001494292678715
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 12
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.57901122481591,
+              "interval": [
+                0.5163428178873927,
+                0.6574429794662713
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 4.0865910559450285,
+              "interval": [
+                3.314882624787171,
+                4.982588301078866
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12
+            }
+          }
+        }
+      },
+      "low_friction": {
+        "episodes": 12,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.02715789595425794,
+              0.03526956585032238
+            ],
+            "explicit_adaptive": [
+              0.016572635239779372,
+              0.029989576896031708
+            ],
+            "gru_stored": [
+              0.012460052268395014,
+              0.01439917900339245
+            ],
+            "gru": {
+              "mean": [
+                0.011002831262463302,
+                0.014648209648287206
+              ],
+              "sd_across_seeds": [
+                0.0003437276669992472,
+                0.0005050393717371352
+              ],
+              "min": [
+                0.01043230282747922,
+                0.014210798792640854
+              ],
+              "max": [
+                0.011397892970603625,
+                0.015858111272859656
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.04248657540365689,
+              0.055463136345481855
+            ],
+            "explicit_adaptive": [
+              0.027839537329980926,
+              0.04281864638594929
+            ],
+            "gru_stored": [
+              0.01704206349851239,
+              0.018576236871363005
+            ],
+            "gru": {
+              "mean": [
+                0.016797641567153018,
+                0.017503086005256865
+              ],
+              "sd_across_seeds": [
+                0.0011641501482706673,
+                0.0012286351662417656
+              ],
+              "min": [
+                0.014978430811445738,
+                0.015486588183486985
+              ],
+              "max": [
+                0.01853272306382269,
+                0.01966826735625801
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.031222901576591734,
+              0.04151576424218128
+            ],
+            "explicit_adaptive": [
+              0.016329031129224836,
+              0.03669101673100295
+            ],
+            "gru_stored": [
+              0.0121327717771875,
+              0.013203063642718104
+            ],
+            "gru": {
+              "mean": [
+                0.011332299995305172,
+                0.01346632236092685
+              ],
+              "sd_across_seeds": [
+                0.0004611027075020704,
+                0.0005854464340589557
+              ],
+              "min": [
+                0.010691201956772351,
+                0.012765787783840438
+              ],
+              "max": [
+                0.012119816178054618,
+                0.014823610790107113
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.6761281178308768,
+              "interval": [
+                0.6031302723641584,
+                0.7679179135842268
+              ],
+              "episodes_with_lower_numerator": 11,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.6346803371532965,
+                0.7010455017267202
+              ]
+            },
+            "yaw": {
+              "ratio": 0.4900734575518139,
+              "interval": [
+                0.4372927862645698,
+                0.5490281466842221
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.47139137732300634,
+                0.5316967820956434
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.6335161235725204,
+              "interval": [
+                0.5256553347808662,
+                0.7643005389006302
+              ],
+              "episodes_with_lower_numerator": 11,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.5591932258699561,
+                0.6772317784073341
+              ]
+            },
+            "yaw": {
+              "ratio": 0.4025222866457561,
+              "interval": [
+                0.31506103734370366,
+                0.5195359929602994
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.34831309313349373,
+                0.45766720683613815
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 0.7123813139616817,
+              "interval": [
+                0.62119355646854,
+                0.8336851954387926
+              ],
+              "episodes_with_lower_numerator": 10,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.6557769852196924,
+                0.763165636727247
+              ]
+            },
+            "yaw": {
+              "ratio": 0.3613216316769388,
+              "interval": [
+                0.26494206734651893,
+                0.48220109003220496
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.3449616597589793,
+                0.39221795427197736
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.6940570219452095,
+              "interval": [
+                0.5633689752730392,
+                0.8283620733490978
+              ],
+              "episodes_with_lower_numerator": 11,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.8757221014542838,
+              "interval": [
+                0.7954546205156064,
+                0.9627562202772536
+              ],
+              "episodes_with_lower_numerator": 8,
+              "episodes": 12
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.46927146791511803,
+              "interval": [
+                0.3752753597372817,
+                0.5875569788758799
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.4291681581142412,
+              "interval": [
+                0.3605187136829461,
+                0.5069123234844288
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            }
+          }
+        }
+      },
+      "medium_friction": {
+        "episodes": 12,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.010143911065056672,
+              0.009793253280233163
+            ],
+            "explicit_adaptive": [
+              0.010737945550816272,
+              0.010142561359967675
+            ],
+            "gru_stored": [
+              0.01012224248803535,
+              0.009728755106355494
+            ],
+            "gru": {
+              "mean": [
+                0.00841045596918629,
+                0.011885856690657264
+              ],
+              "sd_across_seeds": [
+                0.0004473668239226808,
+                0.00014476366281759935
+              ],
+              "min": [
+                0.00771942912561364,
+                0.011689527080828538
+              ],
+              "max": [
+                0.009259531005161943,
+                0.012177428852690663
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.012243239145140439,
+              0.013868288407257007
+            ],
+            "explicit_adaptive": [
+              0.012592394143884385,
+              0.012509609224143967
+            ],
+            "gru_stored": [
+              0.010611704329096042,
+              0.011273474718197297
+            ],
+            "gru": {
+              "mean": [
+                0.010532130179299432,
+                0.01596662167844285
+              ],
+              "sd_across_seeds": [
+                0.00032780237960322486,
+                0.001047222185977274
+              ],
+              "min": [
+                0.010196478907971866,
+                0.014938037372368913
+              ],
+              "max": [
+                0.011224252111265223,
+                0.018219100751800745
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.010969076287413648,
+              0.011204821864079407
+            ],
+            "explicit_adaptive": [
+              0.011492245535244465,
+              0.012150944708955613
+            ],
+            "gru_stored": [
+              0.011252571714441552,
+              0.01063048428063946
+            ],
+            "gru": {
+              "mean": [
+                0.0099028567868326,
+                0.012162671718426032
+              ],
+              "sd_across_seeds": [
+                0.000655218904206905,
+                0.0004535254201348369
+              ],
+              "min": [
+                0.008910877323889095,
+                0.011652754354803374
+              ],
+              "max": [
+                0.011079784429374457,
+                0.013105290851554085
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.7853195659416253,
+              "interval": [
+                0.7026964129332886,
+                0.8472123994851257
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.7200383756817268,
+                0.8593227842525705
+              ]
+            },
+            "yaw": {
+              "ratio": 1.164453720606977,
+              "interval": [
+                1.016784481621906,
+                1.3400414113837769
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 12,
+              "range_across_seeds": [
+                1.1290532240683144,
+                1.1938815895952442
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.8309450986213777,
+              "interval": [
+                0.7502728829176175,
+                0.9161792340882547
+              ],
+              "episodes_with_lower_numerator": 10,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.8033680411651072,
+                0.857409162553531
+              ]
+            },
+            "yaw": {
+              "ratio": 1.1408027376201244,
+              "interval": [
+                0.9707872977373055,
+                1.4015850613853478
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 12,
+              "range_across_seeds": [
+                1.0192219684614963,
+                1.281844634825199
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 0.8748019436808914,
+              "interval": [
+                0.7402761237937237,
+                0.9888134986657868
+              ],
+              "episodes_with_lower_numerator": 9,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.7777650135424101,
+                0.9664348735988179
+              ]
+            },
+            "yaw": {
+              "ratio": 1.0085376960201142,
+              "interval": [
+                0.8762477775782017,
+                1.1571883652786765
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.9626938576977457,
+                1.0769407406842781
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 1.0552675319973899,
+              "interval": [
+                0.9836904224866198,
+                1.1598586761848206
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 1.021089397971134,
+              "interval": [
+                0.969085536322291,
+                1.0669636240125309
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 12
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.8287222401804805,
+              "interval": [
+                0.7930900493028813,
+                0.8767116355461266
+              ],
+              "episodes_with_lower_numerator": 11,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 1.189011348539825,
+              "interval": [
+                1.059285877551167,
+                1.355693620834658
+              ],
+              "episodes_with_lower_numerator": 3,
+              "episodes": 12
+            }
+          }
+        }
+      },
+      "motor_fault": {
+        "episodes": 12,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.03261980244320584,
+              0.1502763412090096
+            ],
+            "explicit_adaptive": [
+              0.013137186305132676,
+              0.046788389140343244
+            ],
+            "gru_stored": [
+              0.010763462885372638,
+              0.042837040259397906
+            ],
+            "gru": {
+              "mean": [
+                0.009040316519328073,
+                0.041172812074401925
+              ],
+              "sd_across_seeds": [
+                0.0005396011934212001,
+                0.001091425774971279
+              ],
+              "min": [
+                0.007941321418825104,
+                0.039378682541189106
+              ],
+              "max": [
+                0.009807305206659385,
+                0.042732767962154965
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.0405001810593979,
+              0.18541484609672673
+            ],
+            "explicit_adaptive": [
+              0.023777394372972518,
+              0.09701492515373207
+            ],
+            "gru_stored": [
+              0.01498152778369183,
+              0.06848561485202465
+            ],
+            "gru": {
+              "mean": [
+                0.013191059103308742,
+                0.059961180103652416
+              ],
+              "sd_across_seeds": [
+                0.000918037929809307,
+                0.0037522677924723
+              ],
+              "min": [
+                0.011658170202919885,
+                0.055085415774227105
+              ],
+              "max": [
+                0.014881649263427978,
+                0.06628861363522644
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.04065187963749912,
+              0.18912546377783768
+            ],
+            "explicit_adaptive": [
+              0.00893015653682307,
+              0.0035161065643679636
+            ],
+            "gru_stored": [
+              0.008253707916503041,
+              0.022636417387252254
+            ],
+            "gru": {
+              "mean": [
+                0.007152838471742675,
+                0.022629511615881837
+              ],
+              "sd_across_seeds": [
+                0.001118761783161585,
+                0.0016678962935876781
+              ],
+              "min": [
+                0.005648274855554319,
+                0.020524256303776262
+              ],
+              "max": [
+                0.009261266925303472,
+                0.02557585813661044
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.6777992298685885,
+              "interval": [
+                0.6173645487240728,
+                0.7484548427382172
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.592414936392786,
+                0.7126097251627772
+              ]
+            },
+            "yaw": {
+              "ratio": 0.8782167309143666,
+              "interval": [
+                0.8112543980451293,
+                0.9597453544416233
+              ],
+              "episodes_with_lower_numerator": 9,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.836980538428318,
+                0.9064554630557827
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.5481808221445535,
+              "interval": [
+                0.4890109240038348,
+                0.6191399281434732
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.4636091440386893,
+                0.6317621765507851
+              ]
+            },
+            "yaw": {
+              "ratio": 0.5956075442114115,
+              "interval": [
+                0.5043110603125613,
+                0.7036647853375696
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.5391339129250037,
+                0.6694687772236082
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 0.7633222396917865,
+              "interval": [
+                0.652740934392805,
+                0.8942912554438568
+              ],
+              "episodes_with_lower_numerator": 10,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.5960223562218954,
+                0.9018087812921771
+              ]
+            },
+            "yaw": {
+              "ratio": 5.9535696719882,
+              "interval": [
+                4.750220766129709,
+                7.432805508728972
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                5.277008015751672,
+                6.464606862154026
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.41513194308682955,
+              "interval": [
+                0.3586649352630904,
+                0.47370584871199894
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.3146887620630204,
+              "interval": [
+                0.26939583513377063,
+                0.3656363049648155
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.2813761113181038,
+              "interval": [
+                0.2613477406484319,
+                0.3004416564011203
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.27636493587447464,
+              "interval": [
+                0.24685464910860383,
+                0.30917136660165856
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            }
+          }
+        }
+      },
+      "reversed": {
+        "episodes": 12,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.03053363962113197,
+              0.030283409212910766
+            ],
+            "explicit_adaptive": [
+              0.02834182084794506,
+              0.03091407396351174
+            ],
+            "gru_stored": [
+              0.016303449074808223,
+              0.017474210877777053
+            ],
+            "gru": {
+              "mean": [
+                0.017090873973937017,
+                0.0187100294630666
+              ],
+              "sd_across_seeds": [
+                0.002719069072760921,
+                0.0016024107896141625
+              ],
+              "min": [
+                0.012986724944737793,
+                0.016517656219102738
+              ],
+              "max": [
+                0.022597540518730114,
+                0.0212368665808082
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.007483012549128202,
+              0.0018721212194917772
+            ],
+            "explicit_adaptive": [
+              0.018324654874096832,
+              0.016990346890716653
+            ],
+            "gru_stored": [
+              0.014008554153049928,
+              0.014770552203642403
+            ],
+            "gru": {
+              "mean": [
+                0.010446537209673912,
+                0.017788796875331185
+              ],
+              "sd_across_seeds": [
+                0.001446239607612919,
+                0.002624324000819658
+              ],
+              "min": [
+                0.007996842295596225,
+                0.01569934781863217
+              ],
+              "max": [
+                0.013472268546561444,
+                0.023615363047587507
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.0074590663612228445,
+              0.002499177964120012
+            ],
+            "explicit_adaptive": [
+              0.009503381029437437,
+              0.005065672349410162
+            ],
+            "gru_stored": [
+              0.007144805469969983,
+              0.00879072398078576
+            ],
+            "gru": {
+              "mean": [
+                0.005012427746709276,
+                0.00892357684723392
+              ],
+              "sd_across_seeds": [
+                0.000952739719404642,
+                0.0005832696152544658
+              ],
+              "min": [
+                0.003973759059557013,
+                0.00795588843507176
+              ],
+              "max": [
+                0.007221255385994639,
+                0.009806876094323205
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.6609503845634607,
+              "interval": [
+                0.5526654927636675,
+                0.8016330397090418
+              ],
+              "episodes_with_lower_numerator": 10,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.4988018214498714,
+                0.8670095931740659
+              ]
+            },
+            "yaw": {
+              "ratio": 0.6221561994191475,
+              "interval": [
+                0.5230752975938645,
+                0.7304404612468007
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.5401296676835609,
+                0.709258202550804
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.5190391177821844,
+              "interval": [
+                0.38810970021673863,
+                0.7063602415321635
+              ],
+              "episodes_with_lower_numerator": 11,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.40064101260890195,
+                0.7039107613366101
+              ]
+            },
+            "yaw": {
+              "ratio": 1.3209040812682973,
+              "interval": [
+                0.9070705809944026,
+                1.9131098266375042
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 12,
+              "range_across_seeds": [
+                1.0687046228464945,
+                1.8016513106658514
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 0.5170954836472176,
+              "interval": [
+                0.4505403882688304,
+                0.6014964815647927
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.40469852942019374,
+                0.7279765750931927
+              ]
+            },
+            "yaw": {
+              "ratio": 1.7723189741427863,
+              "interval": [
+                1.5127517639829102,
+                2.066649858177272
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                1.5738395977727468,
+                1.859574847373275
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.9821929766040025,
+              "interval": [
+                0.8958129393045542,
+                1.065287321902205
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 1.0441434038790305,
+              "interval": [
+                0.998718505898629,
+                1.094072752008874
+              ],
+              "episodes_with_lower_numerator": 3,
+              "episodes": 12
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.6491808256019456,
+              "interval": [
+                0.5212803146139451,
+                0.8295173926494164
+              ],
+              "episodes_with_lower_numerator": 9,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.6496202918059496,
+              "interval": [
+                0.5297610719740705,
+                0.7821373328044565
+              ],
+              "episodes_with_lower_numerator": 11,
+              "episodes": 12
+            }
+          }
+        }
+      },
+      "severe_hidden": {
+        "episodes": 12,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.0933362681207822,
+              0.04518466420239426
+            ],
+            "explicit_adaptive": [
+              0.028665895375440825,
+              0.025100032000567638
+            ],
+            "gru_stored": [
+              0.03228099241541018,
+              0.016317364602874623
+            ],
+            "gru": {
+              "mean": [
+                0.041111492467032676,
+                0.014644744004252357
+              ],
+              "sd_across_seeds": [
+                0.004026761728519512,
+                0.0023888297249165073
+              ],
+              "min": [
+                0.03730562292885626,
+                0.011960610819395263
+              ],
+              "max": [
+                0.05036591370985264,
+                0.0182833101620713
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.11192795095334969,
+              0.05537607487977
+            ],
+            "explicit_adaptive": [
+              0.05352604592863571,
+              0.033063615653316815
+            ],
+            "gru_stored": [
+              0.0482384927793388,
+              0.015944623984722312
+            ],
+            "gru": {
+              "mean": [
+                0.044550474640967154,
+                0.013095924169113423
+              ],
+              "sd_across_seeds": [
+                0.004398580938244591,
+                0.0027559331929194464
+              ],
+              "min": [
+                0.038607286991305785,
+                0.009425729403376718
+              ],
+              "max": [
+                0.050358801083527686,
+                0.01731751609537162
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.1183081922350591,
+              0.05668694612327227
+            ],
+            "explicit_adaptive": [
+              0.019513578210365572,
+              0.02929277897001084
+            ],
+            "gru_stored": [
+              0.03215503464651543,
+              0.01829015838308377
+            ],
+            "gru": {
+              "mean": [
+                0.0505709199179597,
+                0.015096850919679697
+              ],
+              "sd_across_seeds": [
+                0.007194294910253036,
+                0.0038199633545968987
+              ],
+              "min": [
+                0.042243183882215284,
+                0.010258319636970402
+              ],
+              "max": [
+                0.06617309123132196,
+                0.020412050847896684
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 1.4421024916108596,
+              "interval": [
+                1.3109342099294574,
+                1.578310995732452
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                1.3059172215177837,
+                1.7524709155670597
+              ]
+            },
+            "yaw": {
+              "ratio": 0.6015101203164225,
+              "interval": [
+                0.5350396202477408,
+                0.6750695740019735
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.4875582406611061,
+                0.7513298373851103
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.8381279661167494,
+              "interval": [
+                0.7427627769216059,
+                0.9353687264648191
+              ],
+              "episodes_with_lower_numerator": 10,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.7121194680079659,
+                0.9490663021794317
+              ]
+            },
+            "yaw": {
+              "ratio": 0.38362148572687926,
+              "interval": [
+                0.31665442947097594,
+                0.46027110653645464
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.24701850689223462,
+                0.5147169854560117
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 2.6248604338580868,
+              "interval": [
+                2.3836676924174434,
+                2.905090240464599
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                2.186715840292848,
+                3.416367294160784
+              ]
+            },
+            "yaw": {
+              "ratio": 0.5415282060759575,
+              "interval": [
+                0.46393324294209914,
+                0.6456232876832337
+              ],
+              "episodes_with_lower_numerator": 11,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.35665163172341424,
+                0.7286406835468876
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.3058259518657301,
+              "interval": [
+                0.2755344561242211,
+                0.34639684743062216
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.5430780683537838,
+              "interval": [
+                0.5010515217379149,
+                0.583869492438725
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.4410323671848322,
+              "interval": [
+                0.4203120677040983,
+                0.4626670921096525
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.32666695423669484,
+              "interval": [
+                0.297122594664384,
+                0.35771034688006614
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            }
+          }
+        }
+      },
+      "severe_motor": {
+        "episodes": 12,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.05693746831270694,
+              0.26301833448563294
+            ],
+            "explicit_adaptive": [
+              0.01796167130388816,
+              0.07619022875286041
+            ],
+            "gru_stored": [
+              0.021606820441855277,
+              0.11115026343224986
+            ],
+            "gru": {
+              "mean": [
+                0.02325104766647875,
+                0.10825331799351551
+              ],
+              "sd_across_seeds": [
+                0.0020380675259445377,
+                0.005312026837198818
+              ],
+              "min": [
+                0.020568307632212547,
+                0.09651903375239534
+              ],
+              "max": [
+                0.02753197960296001,
+                0.11538825652187089
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.06806467848352075,
+              0.318665364089787
+            ],
+            "explicit_adaptive": [
+              0.03376813189447788,
+              0.1501043154880446
+            ],
+            "gru_stored": [
+              0.023844735485859535,
+              0.14841220542539285
+            ],
+            "gru": {
+              "mean": [
+                0.027491227131184216,
+                0.13699107763068563
+              ],
+              "sd_across_seeds": [
+                0.002839484471579159,
+                0.008263113272036899
+              ],
+              "min": [
+                0.022418063937159973,
+                0.12763381342139118
+              ],
+              "max": [
+                0.030757858641436372,
+                0.1561957574243478
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.07105396025012163,
+              0.3254778068896165
+            ],
+            "explicit_adaptive": [
+              0.010053240507162648,
+              0.003953122924542905
+            ],
+            "gru_stored": [
+              0.024005215455885114,
+              0.11408604411078192
+            ],
+            "gru": {
+              "mean": [
+                0.026457533101984558,
+                0.11208494975352884
+              ],
+              "sd_across_seeds": [
+                0.0037503386189316396,
+                0.008626183207000055
+              ],
+              "min": [
+                0.0215538269124152,
+                0.0922085152405638
+              ],
+              "max": [
+                0.03417315388106586,
+                0.12199607522081124
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 1.2928236114672345,
+              "interval": [
+                1.198667657332621,
+                1.396093457052479
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                1.142372314859813,
+                1.529380023872192
+              ]
+            },
+            "yaw": {
+              "ratio": 1.4286946182875722,
+              "interval": [
+                1.3341303609194854,
+                1.558595225044994
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                1.27199826820952,
+                1.5227710761295243
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.8037228970181508,
+              "interval": [
+                0.7436524712632783,
+                0.8717797818071554
+              ],
+              "episodes_with_lower_numerator": 10,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.6482045478778331,
+                0.891886297564767
+              ]
+            },
+            "yaw": {
+              "ratio": 0.8919351131738126,
+              "interval": [
+                0.8120489503691624,
+                0.9779458279888947
+              ],
+              "episodes_with_lower_numerator": 9,
+              "episodes": 12,
+              "range_across_seeds": [
+                0.8220492610395099,
+                1.0246157932311584
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 2.6397172493104706,
+              "interval": [
+                2.458302265106589,
+                2.841997101969165
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                2.140248977407084,
+                3.4134318003240467
+              ]
+            },
+            "yaw": {
+              "ratio": 29.158291622139227,
+              "interval": [
+                24.257178642994013,
+                34.18562286809435
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 12,
+              "range_across_seeds": [
+                23.9559808799967,
+                31.68039950392284
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.3166606083597977,
+              "interval": [
+                0.2892158223477796,
+                0.3465820623372068
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.2889819626904362,
+              "interval": [
+                0.2558077457000258,
+                0.31920449130892997
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.40938631130912523,
+              "interval": [
+                0.3996085511926249,
+                0.42098935496538514
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            },
+            "yaw": {
+              "ratio": 0.41286697487800617,
+              "interval": [
+                0.396971227674819,
+                0.42954189429346884
+              ],
+              "episodes_with_lower_numerator": 12,
+              "episodes": 12
+            }
+          }
+        }
+      }
+    },
+    "original": {
+      "normal": {
+        "episodes": 4,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.007443283543459706,
+              0.0019122209008632556
+            ],
+            "explicit_adaptive": [
+              0.008489405721683175,
+              0.003160964810865488
+            ],
+            "gru_stored": [
+              0.007195746524889678,
+              0.009552029845031338
+            ],
+            "gru": {
+              "mean": [
+                0.003836732021174605,
+                0.008482250601183926
+              ],
+              "sd_across_seeds": [
+                0.0005281116322049551,
+                0.00048283757648310904
+              ],
+              "min": [
+                0.003157509120056045,
+                0.007856725007017453
+              ],
+              "max": [
+                0.004830596293090507,
+                0.009214474527141765
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.45193674694322017,
+              "interval": [
+                0.41029097033393314,
+                0.47895172030471084
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.36899190956690664,
+                0.5630599940957182
+              ]
+            },
+            "yaw": {
+              "ratio": 2.6885282458456086,
+              "interval": [
+                2.611043303544926,
+                2.768312620053525
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4,
+              "range_across_seeds": [
+                2.4758810306074084,
+                2.880647976688899
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 1.1397726184022163,
+              "interval": [
+                1.1190740275090236,
+                1.1608540540889007
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4
+            },
+            "yaw": {
+              "ratio": 1.6538504967104006,
+              "interval": [
+                1.528768006992572,
+                1.7551372577819153
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.5151051294156539,
+              "interval": [
+                0.47695397025689784,
+                0.5410470056761016
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            },
+            "yaw": {
+              "ratio": 4.4464237748117,
+              "interval": [
+                4.002184470325592,
+                4.75423153666779
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4
+            }
+          }
+        }
+      },
+      "low_friction": {
+        "episodes": 5,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.036791192673932015,
+              0.037106926779806364
+            ],
+            "explicit_adaptive": [
+              0.021174945506154955,
+              0.03204176322282608
+            ],
+            "gru_stored": [
+              0.014584616108999762,
+              0.0158228479019387
+            ],
+            "gru": {
+              "mean": [
+                0.012752288166329985,
+                0.014524936212269563
+              ],
+              "sd_across_seeds": [
+                0.0003713530552076037,
+                0.000763557165038428
+              ],
+              "min": [
+                0.012316737653004254,
+                0.012990927105910105
+              ],
+              "max": [
+                0.013396058474107344,
+                0.015363893919468435
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.0470980939078157,
+              0.04957330412251147
+            ],
+            "explicit_adaptive": [
+              0.03448817486344351,
+              0.04303928510366356
+            ],
+            "gru_stored": [
+              0.02156664227038273,
+              0.02130649123855133
+            ],
+            "gru": {
+              "mean": [
+                0.018220543473603138,
+                0.019090551383201926
+              ],
+              "sd_across_seeds": [
+                0.0007652431803168545,
+                0.0018720790947270476
+              ],
+              "min": [
+                0.01718627541826114,
+                0.015567395691698608
+              ],
+              "max": [
+                0.01923550138512665,
+                0.0215604638256649
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.04241413720128415,
+              0.04429096044823987
+            ],
+            "explicit_adaptive": [
+              0.01950691300544332,
+              0.03799544417437566
+            ],
+            "gru_stored": [
+              0.013415303800264853,
+              0.016084723763460446
+            ],
+            "gru": {
+              "mean": [
+                0.012636024702012274,
+                0.01414947175671355
+              ],
+              "sd_across_seeds": [
+                0.0004708126784153299,
+                0.0009150795056971514
+              ],
+              "min": [
+                0.01183363819716835,
+                0.012550009079257051
+              ],
+              "max": [
+                0.013599550643123449,
+                0.015737265564015054
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.6149277407192261,
+              "interval": [
+                0.5338288006072889,
+                0.7295655097472139
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 5,
+              "range_across_seeds": [
+                0.5887925793063268,
+                0.6489537402695337
+              ]
+            },
+            "yaw": {
+              "ratio": 0.4505997840959367,
+              "interval": [
+                0.38202256363595216,
+                0.533338862935187
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 5,
+              "range_across_seeds": [
+                0.3934188981313552,
+                0.4766996148969156
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.5331133771828521,
+              "interval": [
+                0.46939250487380124,
+                0.6365729132523851
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 5,
+              "range_across_seeds": [
+                0.4816651211051496,
+                0.5801375214078408
+              ]
+            },
+            "yaw": {
+              "ratio": 0.4282204541863378,
+              "interval": [
+                0.33223035806931,
+                0.5519446159260925
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 5,
+              "range_across_seeds": [
+                0.3233625628134471,
+                0.498781323495254
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 0.6841044563485601,
+              "interval": [
+                0.5488928149185094,
+                0.9131822446543659
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 5,
+              "range_across_seeds": [
+                0.6216591674810663,
+                0.7292576433821455
+              ]
+            },
+            "yaw": {
+              "ratio": 0.3679998667395587,
+              "interval": [
+                0.2944998683684808,
+                0.45821760519927873
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 5,
+              "range_across_seeds": [
+                0.31328247531050035,
+                0.40601192728703767
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.6836777386696674,
+              "interval": [
+                0.46917591996112284,
+                0.9962473146345647
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 5
+            },
+            "yaw": {
+              "ratio": 0.884735268439386,
+              "interval": [
+                0.7185637319002882,
+                1.0804528838489187
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 5
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.42041240722016804,
+              "interval": [
+                0.2530123567485287,
+                0.6985690122649879
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 5
+            },
+            "yaw": {
+              "ratio": 0.3986615209408479,
+              "interval": [
+                0.28873217801785,
+                0.5504443923428746
+              ],
+              "episodes_with_lower_numerator": 5,
+              "episodes": 5
+            }
+          }
+        }
+      },
+      "medium_friction": {
+        "episodes": 1,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.009349880806811114,
+              0.011685073765612829
+            ],
+            "explicit_adaptive": [
+              0.008915504358118132,
+              0.011090817687270802
+            ],
+            "gru_stored": [
+              0.011734219367324593,
+              0.01468016782952476
+            ],
+            "gru": {
+              "mean": [
+                0.008451212157651617,
+                0.019859901309778386
+              ],
+              "sd_across_seeds": [
+                0.0008643640659564317,
+                0.00158160451468426
+              ],
+              "min": [
+                0.007388335639760401,
+                0.017735093887250065
+              ],
+              "max": [
+                0.009597729042472834,
+                0.021915942094658546
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.014298083918133885,
+              0.010386424887084826
+            ],
+            "explicit_adaptive": [
+              0.01312788747700499,
+              0.01093612152324956
+            ],
+            "gru_stored": [
+              0.016492694828522423,
+              0.011122528793204765
+            ],
+            "gru": {
+              "mean": [
+                0.00880940144880769,
+                0.015480033985637779
+              ],
+              "sd_across_seeds": [
+                0.0012220459408653645,
+                0.0023762036710421393
+              ],
+              "min": [
+                0.007284022155770123,
+                0.01255474036114283
+              ],
+              "max": [
+                0.01152732600459943,
+                0.019944538656149743
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.008407196487980223,
+              0.01503622083775586
+            ],
+            "explicit_adaptive": [
+              0.007919009970601677,
+              0.01334670502968974
+            ],
+            "gru_stored": [
+              0.01282155754351863,
+              0.018582036201315523
+            ],
+            "gru": {
+              "mean": [
+                0.01035590011728704,
+                0.025825451300871327
+              ],
+              "sd_across_seeds": [
+                0.0013530378779442727,
+                0.002348017628417304
+              ],
+              "min": [
+                0.008623129242394813,
+                0.02210617578801064
+              ],
+              "max": [
+                0.01224407478986468,
+                0.02940899493016453
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.9479230583243732,
+              "interval": [
+                0.9479230583243732,
+                0.9479230583243732
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 1,
+              "range_across_seeds": [
+                0.8287064133430492,
+                1.0765211542668915
+              ]
+            },
+            "yaw": {
+              "ratio": 1.7906615968065251,
+              "interval": [
+                1.7906615968065251,
+                1.7906615968065251
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 1,
+              "range_across_seeds": [
+                1.5990790208016006,
+                1.976043851105045
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.6710448626436183,
+              "interval": [
+                0.6710448626436183,
+                0.6710448626436183
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 1,
+              "range_across_seeds": [
+                0.5548510503711224,
+                0.8780792815897357
+              ]
+            },
+            "yaw": {
+              "ratio": 1.41549579096466,
+              "interval": [
+                1.41549579096466,
+                1.41549579096466
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 1,
+              "range_across_seeds": [
+                1.1480066616352222,
+                1.8237305258311927
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 1.3077266168033643,
+              "interval": [
+                1.3077266168033643,
+                1.3077266168033643
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 1,
+              "range_across_seeds": [
+                1.0889150631716704,
+                1.546162315152937
+              ]
+            },
+            "yaw": {
+              "ratio": 1.934968311910889,
+              "interval": [
+                1.934968311910889,
+                1.934968311910889
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 1,
+              "range_across_seeds": [
+                1.6563021164276472,
+                2.2034648150793945
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.9535420335651176,
+              "interval": [
+                0.9535420335651176,
+                0.9535420335651176
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 1
+            },
+            "yaw": {
+              "ratio": 0.9491440028311314,
+              "interval": [
+                0.9491440028311314,
+                0.9491440028311314
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 1
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.9038844806978883,
+              "interval": [
+                0.9038844806978883,
+                0.9038844806978883
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 1
+            },
+            "yaw": {
+              "ratio": 1.6995957157089308,
+              "interval": [
+                1.6995957157089308,
+                1.6995957157089308
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 1
+            }
+          }
+        }
+      },
+      "motor_fault": {
+        "episodes": 2,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.028734321539696402,
+              0.13325197666236266
+            ],
+            "explicit_adaptive": [
+              0.01315588736117544,
+              0.042395418041922886
+            ],
+            "gru_stored": [
+              0.010016008077769614,
+              0.03798118574281044
+            ],
+            "gru": {
+              "mean": [
+                0.008483882580616392,
+                0.03817631860621857
+              ],
+              "sd_across_seeds": [
+                0.0006720259449064458,
+                0.00175119281298294
+              ],
+              "min": [
+                0.007698961162410576,
+                0.036094353808441615
+              ],
+              "max": [
+                0.010111542365247177,
+                0.04145929656630094
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.0435302901729958,
+              0.20026615352870997
+            ],
+            "explicit_adaptive": [
+              0.022154071346855493,
+              0.08439358588603921
+            ],
+            "gru_stored": [
+              0.010459889902911638,
+              0.05577850818542606
+            ],
+            "gru": {
+              "mean": [
+                0.010585516859824243,
+                0.051607548397956726
+              ],
+              "sd_across_seeds": [
+                0.0013326476329107646,
+                0.0071350526791543484
+              ],
+              "min": [
+                0.008060197745497145,
+                0.04268661152516969
+              ],
+              "max": [
+                0.012528043300789857,
+                0.0628111400252401
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.03274066455712801,
+              0.15505385728050744
+            ],
+            "explicit_adaptive": [
+              0.010039968300763858,
+              0.0040501829194877935
+            ],
+            "gru_stored": [
+              0.009799254027050643,
+              0.02562840400444099
+            ],
+            "gru": {
+              "mean": [
+                0.007602467583258666,
+                0.026857744797676296
+              ],
+              "sd_across_seeds": [
+                0.001258397075531433,
+                0.004036226038170589
+              ],
+              "min": [
+                0.006579833333501084,
+                0.022825161965096527
+              ],
+              "max": [
+                0.010686580873529947,
+                0.03315653398093883
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.6348757127270104,
+              "interval": [
+                0.5356633111399275,
+                0.7524636506332224
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 2,
+              "range_across_seeds": [
+                0.5811954932980854,
+                0.7227122471304964
+              ]
+            },
+            "yaw": {
+              "ratio": 0.9008244441775587,
+              "interval": [
+                0.8819934857955217,
+                0.9200574520070086
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 2,
+              "range_across_seeds": [
+                0.8516831857864945,
+                0.978269481085565
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.4763185175404526,
+              "interval": [
+                0.463907071028454,
+                0.4890620219453794
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 2,
+              "range_across_seeds": [
+                0.3658677191168812,
+                0.5685890190680596
+              ]
+            },
+            "yaw": {
+              "ratio": 0.6046258455716268,
+              "interval": [
+                0.48186775631151174,
+                0.7586571384885819
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 2,
+              "range_across_seeds": [
+                0.49905813417643824,
+                0.7182315876926577
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 0.7526106585328844,
+              "interval": [
+                0.5611658934887848,
+                1.0093678356249254
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 2,
+              "range_across_seeds": [
+                0.5832872570709133,
+                0.9339699914506046
+              ]
+            },
+            "yaw": {
+              "ratio": 6.548316937564598,
+              "interval": [
+                5.965640010696563,
+                7.187905176629752
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 2,
+              "range_across_seeds": [
+                5.38736386322649,
+                8.105789963287416
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.4834147144209744,
+              "interval": [
+                0.34918159492721906,
+                0.6692500106353568
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 2
+            },
+            "yaw": {
+              "ratio": 0.33682328595076394,
+              "interval": [
+                0.24616514137781786,
+                0.46086917637353636
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 2
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.3069082613607403,
+              "interval": [
+                0.26274645765286636,
+                0.35849267667736695
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 2
+            },
+            "yaw": {
+              "ratio": 0.3034186493526558,
+              "interval": [
+                0.21711605112516902,
+                0.42402612012280455
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 2
+            }
+          }
+        }
+      },
+      "reversed": {
+        "episodes": 4,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.023705449588554653,
+              0.02647121791287198
+            ],
+            "explicit_adaptive": [
+              0.02398812719064651,
+              0.026284045075892142
+            ],
+            "gru_stored": [
+              0.013427395816531913,
+              0.017018058388237053
+            ],
+            "gru": {
+              "mean": [
+                0.014482123682953419,
+                0.019342269271385153
+              ],
+              "sd_across_seeds": [
+                0.002191652798994134,
+                0.0006813107554963781
+              ],
+              "min": [
+                0.01227973453572097,
+                0.018499031738113552
+              ],
+              "max": [
+                0.019194470278305446,
+                0.02029461531028106
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.007196473882469961,
+              0.0029988437662086358
+            ],
+            "explicit_adaptive": [
+              0.016508509448128185,
+              0.019067351122343257
+            ],
+            "gru_stored": [
+              0.010465782016544616,
+              0.013041099205953002
+            ],
+            "gru": {
+              "mean": [
+                0.009272601013663818,
+                0.018277686321982352
+              ],
+              "sd_across_seeds": [
+                0.002177858546383786,
+                0.0017026120145469334
+              ],
+              "min": [
+                0.005925317672812999,
+                0.01572754389535078
+              ],
+              "max": [
+                0.012687900497913403,
+                0.02058245262379259
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.006606290480194073,
+              0.001748333867864187
+            ],
+            "explicit_adaptive": [
+              0.008500370189822802,
+              0.004619031471999529
+            ],
+            "gru_stored": [
+              0.006942321013902074,
+              0.00885950781412727
+            ],
+            "gru": {
+              "mean": [
+                0.00559944197064809,
+                0.009173303429742386
+              ],
+              "sd_across_seeds": [
+                0.0012063481997544815,
+                0.0007863398872457375
+              ],
+              "min": [
+                0.003671115216317829,
+                0.008145831202384077
+              ],
+              "max": [
+                0.0073411312972104185,
+                0.010160814805555394
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 0.690553173926993,
+              "interval": [
+                0.4592301240376348,
+                0.9734147749254171
+              ],
+              "episodes_with_lower_numerator": 3,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.5689221899497329,
+                0.8938564738035428
+              ]
+            },
+            "yaw": {
+              "ratio": 0.7540584437242834,
+              "interval": [
+                0.6562646017138799,
+                0.8664251203964677
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.7032452309249205,
+                0.8075700393306668
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.5656902374460369,
+              "interval": [
+                0.40765585388318365,
+                0.7849892052168425
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.36315193817157165,
+                0.7680074431329078
+              ]
+            },
+            "yaw": {
+              "ratio": 0.9262177554055758,
+              "interval": [
+                0.5746053610554027,
+                1.401222703392058
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.7721399321822795,
+                1.0247867958750112
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 0.6233405923726553,
+              "interval": [
+                0.38453811219581585,
+                0.9332172858425101
+              ],
+              "episodes_with_lower_numerator": 3,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.411597093789759,
+                0.8061391390578758
+              ]
+            },
+            "yaw": {
+              "ratio": 2.1237376704623245,
+              "interval": [
+                1.3492676536711488,
+                3.1028937012901245
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4,
+              "range_across_seeds": [
+                1.889054356512279,
+                2.305340421167558
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 1.0480777845228753,
+              "interval": [
+                0.9756404900287704,
+                1.1185167429984164
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 4
+            },
+            "yaw": {
+              "ratio": 0.9922065465670641,
+              "interval": [
+                0.9153934827926514,
+                1.0754651956305612
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 4
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.7237534406246425,
+              "interval": [
+                0.45625036653378304,
+                1.073501122254936
+              ],
+              "episodes_with_lower_numerator": 2,
+              "episodes": 4
+            },
+            "yaw": {
+              "ratio": 0.7481817243574062,
+              "interval": [
+                0.6675803346713851,
+                0.8568594376021853
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            }
+          }
+        }
+      },
+      "severe_hidden": {
+        "episodes": 4,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.1004635031926627,
+              0.057299855964336295
+            ],
+            "explicit_adaptive": [
+              0.02718466837249396,
+              0.027856502414202663
+            ],
+            "gru_stored": [
+              0.03300924100281588,
+              0.018855054650352154
+            ],
+            "gru": {
+              "mean": [
+                0.042310256344472344,
+                0.015035783052430063
+              ],
+              "sd_across_seeds": [
+                0.005178286789229723,
+                0.0023008205427688115
+              ],
+              "min": [
+                0.03739272672675527,
+                0.011832735152466833
+              ],
+              "max": [
+                0.054424847323614335,
+                0.018251553595096198
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.11831731438704918,
+              0.05707012252773899
+            ],
+            "explicit_adaptive": [
+              0.0554465045305952,
+              0.03389409236177573
+            ],
+            "gru_stored": [
+              0.04666248940011908,
+              0.017433598157780283
+            ],
+            "gru": {
+              "mean": [
+                0.045219292487256396,
+                0.013756570081680023
+              ],
+              "sd_across_seeds": [
+                0.004677946529275158,
+                0.0024177315210286206
+              ],
+              "min": [
+                0.037648786499478906,
+                0.010440154628020993
+              ],
+              "max": [
+                0.05193856375713387,
+                0.017324420131633187
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.12566800837235526,
+              0.07404533995155423
+            ],
+            "explicit_adaptive": [
+              0.0176661197515201,
+              0.03317856948464656
+            ],
+            "gru_stored": [
+              0.03521770950970741,
+              0.021804416021004025
+            ],
+            "gru": {
+              "mean": [
+                0.05187358871532942,
+                0.014962803353338881
+              ],
+              "sd_across_seeds": [
+                0.008121680696325212,
+                0.003977274093212231
+              ],
+              "min": [
+                0.044515405409039414,
+                0.010114048523831803
+              ],
+              "max": [
+                0.07038692571601415,
+                0.02089826059261926
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 1.5676575923362803,
+              "interval": [
+                1.4409545663442724,
+                1.701335351040644
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4,
+              "range_across_seeds": [
+                1.3843036873938812,
+                2.016435894513504
+              ]
+            },
+            "yaw": {
+              "ratio": 0.5403337719285575,
+              "interval": [
+                0.47367987837100767,
+                0.5903183015600948
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.4240772715044643,
+                0.6547601179500274
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.8270927606729295,
+              "interval": [
+                0.7248198801767269,
+                0.9572446584908549
+              ],
+              "episodes_with_lower_numerator": 3,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.67859468682389,
+                0.9484705336301601
+              ]
+            },
+            "yaw": {
+              "ratio": 0.40303220019703784,
+              "interval": [
+                0.3443517419964116,
+                0.48093688506286103
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.29305562711666766,
+                0.5181935090967018
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 2.940284593079566,
+              "interval": [
+                2.6006226366622416,
+                3.46033680345845
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4,
+              "range_across_seeds": [
+                2.5180130039427793,
+                3.9885465051362736
+              ]
+            },
+            "yaw": {
+              "ratio": 0.4545624793742244,
+              "interval": [
+                0.3699139494741832,
+                0.5406127994813658
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.30387053705994593,
+                0.6365119756694201
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.269869752313457,
+              "interval": [
+                0.2406633684654661,
+                0.30180348002962765
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            },
+            "yaw": {
+              "ratio": 0.48660216406340145,
+              "interval": [
+                0.4372820935434091,
+                0.5414849351650393
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.4230633661561023,
+              "interval": [
+                0.3964378118098133,
+                0.4514771458510553
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            },
+            "yaw": {
+              "ratio": 0.2629275827369765,
+              "interval": [
+                0.2401405405867751,
+                0.29896345315327916
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            }
+          }
+        }
+      },
+      "severe_motor": {
+        "episodes": 4,
+        "errors": {
+          "all": {
+            "fixed": [
+              0.059637235638807476,
+              0.27398575474297227
+            ],
+            "explicit_adaptive": [
+              0.019392144712283507,
+              0.08282940696843581
+            ],
+            "gru_stored": [
+              0.020472745463661415,
+              0.1185158228080529
+            ],
+            "gru": {
+              "mean": [
+                0.023184430472908465,
+                0.1134538229876716
+              ],
+              "sd_across_seeds": [
+                0.0021253921157169124,
+                0.007150612164041597
+              ],
+              "min": [
+                0.019904035433516622,
+                0.09858979596270075
+              ],
+              "max": [
+                0.02627336140137056,
+                0.12402048152864137
+              ]
+            }
+          },
+          "early": {
+            "fixed": [
+              0.07863473994384614,
+              0.36058082316200557
+            ],
+            "explicit_adaptive": [
+              0.032902598111765394,
+              0.13968145555328434
+            ],
+            "gru_stored": [
+              0.019166198421950918,
+              0.1561388824372918
+            ],
+            "gru": {
+              "mean": [
+                0.026059005756022463,
+                0.14136226869762197
+              ],
+              "sd_across_seeds": [
+                0.004554243759611288,
+                0.012375753886238836
+              ],
+              "min": [
+                0.020155476235677917,
+                0.1228897485985165
+              ],
+              "max": [
+                0.033193079949784314,
+                0.16757664677602324
+              ]
+            }
+          },
+          "late": {
+            "fixed": [
+              0.07012787773487339,
+              0.32118827782126297
+            ],
+            "explicit_adaptive": [
+              0.009051652403471989,
+              0.002610114994046505
+            ],
+            "gru_stored": [
+              0.02196250209487079,
+              0.11151437049974716
+            ],
+            "gru": {
+              "mean": [
+                0.02446299263298139,
+                0.10667605259825506
+              ],
+              "sd_across_seeds": [
+                0.004020815009691652,
+                0.011334990556907154
+              ],
+              "min": [
+                0.018948380314443233,
+                0.08152639439552058
+              ],
+              "max": [
+                0.031606280117230906,
+                0.11957937957876583
+              ]
+            }
+          }
+        },
+        "gru_over_explicit": {
+          "all": {
+            "speed": {
+              "ratio": 1.1993340487321498,
+              "interval": [
+                1.0578758525091623,
+                1.3597079062127404
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4,
+              "range_across_seeds": [
+                1.030386685871265,
+                1.3598253216382603
+              ]
+            },
+            "yaw": {
+              "ratio": 1.3827271275734714,
+              "interval": [
+                1.2303146469708,
+                1.5461605123065396
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4,
+              "range_across_seeds": [
+                1.2007726352771717,
+                1.5116645623967155
+              ]
+            }
+          },
+          "early": {
+            "speed": {
+              "ratio": 0.8017062227353957,
+              "interval": [
+                0.6793358138490986,
+                0.9195300523998974
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.5879189334120146,
+                1.0106706395635987
+              ]
+            },
+            "yaw": {
+              "ratio": 1.022357083355572,
+              "interval": [
+                0.8903703128175483,
+                1.1330185436443856
+              ],
+              "episodes_with_lower_numerator": 1,
+              "episodes": 4,
+              "range_across_seeds": [
+                0.88842271407258,
+                1.2114368397518278
+              ]
+            }
+          },
+          "late": {
+            "speed": {
+              "ratio": 2.7080034760426224,
+              "interval": [
+                2.5555530640993602,
+                2.846207819338189
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4,
+              "range_across_seeds": [
+                2.1011298121211937,
+                3.508007736881518
+              ]
+            },
+            "yaw": {
+              "ratio": 41.1000918139413,
+              "interval": [
+                35.96818686997799,
+                46.96421182476572
+              ],
+              "episodes_with_lower_numerator": 0,
+              "episodes": 4,
+              "range_across_seeds": [
+                31.394641229561753,
+                45.973464361077006
+              ]
+            }
+          }
+        },
+        "over_fixed": {
+          "explicit": {
+            "speed": {
+              "ratio": 0.32329900523785376,
+              "interval": [
+                0.2723191765377255,
+                0.3722403778719452
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            },
+            "yaw": {
+              "ratio": 0.2995684975056447,
+              "interval": [
+                0.25368667398661854,
+                0.35200848159358894
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            }
+          },
+          "gru": {
+            "speed": {
+              "ratio": 0.3877435049029917,
+              "interval": [
+                0.3695029450818718,
+                0.4072623820521233
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            },
+            "yaw": {
+              "ratio": 0.4142214880674806,
+              "interval": [
+                0.3881302392894621,
+                0.4366803391688457
+              ],
+              "episodes_with_lower_numerator": 4,
+              "episodes": 4
+            }
+          }
+        }
+      }
+    }
+  },
+  "continuity": {
+    "test": {
+      "episodes": 12,
+      "fixed": [
+        0.030648867816973364,
+        0.06279930999246776
+      ],
+      "explicit": [
+        0.01602836782202508,
+        0.027757052011294817
+      ],
+      "gru_stored_40_epochs": [
+        0.011805693500675911,
+        0.020027194274361552
+      ],
+      "gru_converged": {
+        "mean": [
+          0.009676816899575873,
+          0.019930779295273957
+        ],
+        "sd_across_seeds": [
+          0.00026910352844221395,
+          0.0006211608076347061
+        ],
+        "min": [
+          0.009363335365478882,
+          0.01918549310712574
+        ],
+        "max": [
+          0.010311092152479167,
+          0.02087710819843353
+        ]
+      }
+    },
+    "ood": {
+      "episodes": 12,
+      "fixed": [
+        0.0697680311545342,
+        0.1627074153413508
+      ],
+      "explicit": [
+        0.025106940098158673,
+        0.05355694272347081
+      ],
+      "gru_stored_40_epochs": [
+        0.023920013896625528,
+        0.07014157985275435
+      ],
+      "gru_converged": {
+        "mean": [
+          0.029283962171922445,
+          0.06725164525154492
+        ],
+        "sd_across_seeds": [
+          0.0030188308242855458,
+          0.004121870903413427
+        ],
+        "min": [
+          0.025748106945655783,
+          0.058696368597630943
+        ],
+        "max": [
+          0.03591359626026109,
+          0.07334025002647729
+        ]
+      }
+    }
+  },
+  "motor_faults": [
+    {
+      "id": "test_139",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.7497527280882558,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.12592024263457474,
+        "explicit": 0.0031384022183523425,
+        "gru_mean": 0.0211084563164532,
+        "gru_min": 0.015610056487689912,
+        "gru_max": 0.027808032538915107,
+        "gru_stored": 0.02023979645250324
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.03262867647058824,
+        "min": 0.0,
+        "max": 0.08455882352941177
+      }
+    },
+    {
+      "id": "test_011",
+      "set": "original",
+      "split": "test",
+      "left_motor_efficiency": 0.7407825694930558,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.09950866759261076,
+        "explicit": 0.0036891928829306995,
+        "gru_mean": 0.022008396669588377,
+        "gru_min": 0.015758232457588922,
+        "gru_max": 0.030897749950392198,
+        "gru_stored": 0.01911628664438618
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.0390625,
+        "min": 0.0,
+        "max": 0.11647727272727272
+      }
+    },
+    {
+      "id": "test_144",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.7118887024735889,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.1268530566403001,
+        "explicit": 0.0034321555535143443,
+        "gru_mean": 0.01365237140323667,
+        "gru_min": 0.007485344814379917,
+        "gru_max": 0.020010755061072746,
+        "gru_stored": 0.011710268277261912
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.0720486111111111,
+        "min": 0.0,
+        "max": 0.12268518518518519
+      }
+    },
+    {
+      "id": "test_137",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.6739927321826518,
+      "within_training_faults": true,
+      "settled_yaw_rmse": {
+        "fixed": 0.1479360906674898,
+        "explicit": 0.0023654659806798518,
+        "gru_mean": 0.011943189564814499,
+        "gru_min": 0.009622254993274659,
+        "gru_max": 0.015447754585585356,
+        "gru_stored": 0.014106510667820791
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.09870426829268292,
+        "min": 0.0,
+        "max": 0.22865853658536586
+      }
+    },
+    {
+      "id": "test_140",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.6650187679596085,
+      "within_training_faults": true,
+      "settled_yaw_rmse": {
+        "fixed": 0.16205823001817765,
+        "explicit": 0.003942744885730643,
+        "gru_mean": 0.019625756814543916,
+        "gru_min": 0.01593524295880071,
+        "gru_max": 0.022631886557446506,
+        "gru_stored": 0.018562283252294812
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.11820652173913045,
+        "min": 0.0,
+        "max": 0.30434782608695654
+      }
+    },
+    {
+      "id": "test_138",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.6292532866945832,
+      "within_training_faults": true,
+      "settled_yaw_rmse": {
+        "fixed": 0.15137533257584304,
+        "explicit": 0.0033796499839005684,
+        "gru_mean": 0.011372137096355255,
+        "gru_min": 0.008084506577241772,
+        "gru_max": 0.017105272896944714,
+        "gru_stored": 0.007794262486513059
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.12760416666666666,
+        "min": 0.0,
+        "max": 0.3020833333333333
+      }
+    },
+    {
+      "id": "test_146",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.6277650996557544,
+      "within_training_faults": true,
+      "settled_yaw_rmse": {
+        "fixed": 0.14602527744392577,
+        "explicit": 0.0035412674786469886,
+        "gru_mean": 0.010961982105815612,
+        "gru_min": 0.008634567943899062,
+        "gru_max": 0.015223775326969658,
+        "gru_stored": 0.0079986454342293
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.13541666666666666,
+        "min": 0.008928571428571428,
+        "max": 0.34226190476190477
+      }
+    },
+    {
+      "id": "test_143",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.5812742940890142,
+      "within_training_faults": true,
+      "settled_yaw_rmse": {
+        "fixed": 0.17431523789227416,
+        "explicit": 0.002289895235840336,
+        "gru_mean": 0.015331105394767707,
+        "gru_min": 0.008277765857744788,
+        "gru_max": 0.019389539041384466,
+        "gru_stored": 0.011195293202199143
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.16167091836734696,
+        "min": 0.00510204081632653,
+        "max": 0.41836734693877553
+      }
+    },
+    {
+      "id": "test_145",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.49229739051751,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.22879973965772793,
+        "explicit": 0.004126332795522923,
+        "gru_mean": 0.02488783013619354,
+        "gru_min": 0.021622136556012264,
+        "gru_max": 0.027732531451263778,
+        "gru_stored": 0.030346421610771095
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.23387896825396826,
+        "min": 0.09126984126984126,
+        "max": 0.48412698412698413
+      }
+    },
+    {
+      "id": "test_136",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.4760841822571031,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.2604690615038135,
+        "explicit": 0.0031477843468000677,
+        "gru_mean": 0.03376439117036476,
+        "gru_min": 0.029252670953393622,
+        "gru_max": 0.042743209487441786,
+        "gru_stored": 0.0362948457328581
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.22259615384615383,
+        "min": 0.03076923076923077,
+        "max": 0.48846153846153845
+      }
+    },
+    {
+      "id": "test_010",
+      "set": "original",
+      "split": "test",
+      "left_motor_efficiency": 0.4707703401542505,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.21059904696840412,
+        "explicit": 0.004411172956044887,
+        "gru_mean": 0.03170709292576421,
+        "gru_min": 0.02560811760695893,
+        "gru_max": 0.03969125867318471,
+        "gru_stored": 0.0321405213644958
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.23464912280701755,
+        "min": 0.1206140350877193,
+        "max": 0.4780701754385965
+      }
+    },
+    {
+      "id": "test_147",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.4679546211064438,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.2711978008471952,
+        "explicit": 0.005100917487330749,
+        "gru_mean": 0.0386186155461818,
+        "gru_min": 0.03248117307103761,
+        "gru_max": 0.05588388602827515,
+        "gru_stored": 0.03913749008972116
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.23437500000000003,
+        "min": 0.0528169014084507,
+        "max": 0.5
+      }
+    },
+    {
+      "id": "test_141",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.45865441623621633,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.24455610314561876,
+        "explicit": 0.004673625662985996,
+        "gru_mean": 0.03362662844396297,
+        "gru_min": 0.027977256077415632,
+        "gru_max": 0.040130904455584024,
+        "gru_stored": 0.036869740349854636
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.23704268292682928,
+        "min": 0.125,
+        "max": 0.4725609756097561
+      }
+    },
+    {
+      "id": "test_142",
+      "set": "new",
+      "split": "test",
+      "left_motor_efficiency": 0.4544465510512233,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.22999939230711144,
+        "explicit": 0.003055037143110746,
+        "gru_mean": 0.036661675397892085,
+        "gru_min": 0.030631759297767982,
+        "gru_max": 0.04715388952408524,
+        "gru_stored": 0.037381451090999857
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.24248798076923075,
+        "min": 0.11298076923076923,
+        "max": 0.4855769230769231
+      }
+    },
+    {
+      "id": "ood_004",
+      "set": "original",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.31122845050023756,
+        "explicit": 0.0028295871662740732,
+        "gru_mean": 0.10385051702956073,
+        "gru_min": 0.0802913886281159,
+        "gru_max": 0.11412430962379604,
+        "gru_stored": 0.10894707927843472
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.3219178082191781,
+        "min": 0.125,
+        "max": 0.5993150684931506
+      }
+    },
+    {
+      "id": "ood_005",
+      "set": "original",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.3152502908444621,
+        "explicit": 0.0023185649446460558,
+        "gru_mean": 0.10309849352455777,
+        "gru_min": 0.07922612698568152,
+        "gru_max": 0.11751828699794996,
+        "gru_stored": 0.10783701392727577
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.329375,
+        "min": 0.125,
+        "max": 0.5575
+      }
+    },
+    {
+      "id": "ood_006",
+      "set": "original",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.31354950103314,
+        "explicit": 0.0029788530014844532,
+        "gru_mean": 0.10500272702165457,
+        "gru_min": 0.0775219025715819,
+        "gru_max": 0.12031398249213927,
+        "gru_stored": 0.11012185636955828
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.3203125,
+        "min": 0.125,
+        "max": 0.5875
+      }
+    },
+    {
+      "id": "ood_007",
+      "set": "original",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.3447248689072122,
+        "explicit": 0.0023134548637814387,
+        "gru_mean": 0.11475247281724718,
+        "gru_min": 0.08906615939670302,
+        "gru_max": 0.13627684024735895,
+        "gru_stored": 0.11915153242371987
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.3297139830508475,
+        "min": 0.125,
+        "max": 0.5911016949152542
+      }
+    },
+    {
+      "id": "ood_112",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.2781363108136024,
+        "explicit": 0.006696952288439832,
+        "gru_mean": 0.09650703787574871,
+        "gru_min": 0.08226232596382323,
+        "gru_max": 0.1066880572026779,
+        "gru_stored": 0.09716670781267117
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.30740489130434784,
+        "min": 0.125,
+        "max": 0.5407608695652174
+      }
+    },
+    {
+      "id": "ood_113",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.2944982175497466,
+        "explicit": 0.0036529909801001565,
+        "gru_mean": 0.1002707842516279,
+        "gru_min": 0.07959707085502069,
+        "gru_max": 0.11552802295133274,
+        "gru_stored": 0.1020618499448352
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.315625,
+        "min": 0.125,
+        "max": 0.5666666666666667
+      }
+    },
+    {
+      "id": "ood_114",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.33563213214986076,
+        "explicit": 0.0035284455726842003,
+        "gru_mean": 0.11857844276771648,
+        "gru_min": 0.10191295354858954,
+        "gru_max": 0.12678836384579215,
+        "gru_stored": 0.11994935824982858
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.3157106164383562,
+        "min": 0.125,
+        "max": 0.577054794520548
+      }
+    },
+    {
+      "id": "ood_115",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.3351909115283211,
+        "explicit": 0.002927088568411327,
+        "gru_mean": 0.11968848597654551,
+        "gru_min": 0.10298204396556894,
+        "gru_max": 0.12610942960793195,
+        "gru_stored": 0.11835022960623472
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.315625,
+        "min": 0.125,
+        "max": 0.565625
+      }
+    },
+    {
+      "id": "ood_116",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.31243194497898624,
+        "explicit": 0.0027942128070780063,
+        "gru_mean": 0.10853038081102187,
+        "gru_min": 0.09251202899102351,
+        "gru_max": 0.11820993462349925,
+        "gru_stored": 0.10964964860689963
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.3076923076923077,
+        "min": 0.125,
+        "max": 0.5673076923076923
+      }
+    },
+    {
+      "id": "ood_117",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.3495067933557553,
+        "explicit": 0.0030985455064659793,
+        "gru_mean": 0.11911517560832478,
+        "gru_min": 0.09404382688636823,
+        "gru_max": 0.13239770759524933,
+        "gru_stored": 0.12150123124111874
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.31607142857142856,
+        "min": 0.125,
+        "max": 0.5839285714285715
+      }
+    },
+    {
+      "id": "ood_118",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.2859499553563887,
+        "explicit": 0.005189387738595373,
+        "gru_mean": 0.09442879589647309,
+        "gru_min": 0.07370558392488762,
+        "gru_max": 0.10150000445696253,
+        "gru_stored": 0.09867361130861473
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.32204861111111116,
+        "min": 0.125,
+        "max": 0.5347222222222222
+      }
+    },
+    {
+      "id": "ood_119",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.32543321743965065,
+        "explicit": 0.004127317297570043,
+        "gru_mean": 0.11394811397481903,
+        "gru_min": 0.10316295564124006,
+        "gru_max": 0.12673252340724103,
+        "gru_stored": 0.11526895265700791
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.31285511363636365,
+        "min": 0.125,
+        "max": 0.5767045454545454
+      }
+    },
+    {
+      "id": "ood_120",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.3335426666358694,
+        "explicit": 0.0036912441825824246,
+        "gru_mean": 0.11612320721782324,
+        "gru_min": 0.0976294933492426,
+        "gru_max": 0.12628804312397732,
+        "gru_stored": 0.1195476374104799
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.3166454081632653,
+        "min": 0.125,
+        "max": 0.5841836734693877
+      }
+    },
+    {
+      "id": "ood_121",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.34127365545725996,
+        "explicit": 0.004710853778193253,
+        "gru_mean": 0.11757499494984928,
+        "gru_min": 0.0933893343158424,
+        "gru_max": 0.13303590549576289,
+        "gru_stored": 0.11843588184385676
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.3110219594594595,
+        "min": 0.125,
+        "max": 0.5658783783783784
+      }
+    },
+    {
+      "id": "ood_122",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.34764820146503567,
+        "explicit": 0.0038249102482681117,
+        "gru_mean": 0.11692148102745423,
+        "gru_min": 0.09137724871438996,
+        "gru_max": 0.1283796886434381,
+        "gru_stored": 0.12105208481685575
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.32254464285714285,
+        "min": 0.125,
+        "max": 0.5928571428571429
+      }
+    },
+    {
+      "id": "ood_123",
+      "set": "new",
+      "split": "ood",
+      "left_motor_efficiency": 0.25,
+      "within_training_faults": false,
+      "settled_yaw_rmse": {
+        "fixed": 0.36648967594492166,
+        "explicit": 0.0031955261261261527,
+        "gru_mean": 0.12333249668494203,
+        "gru_min": 0.09392731673076876,
+        "gru_max": 0.1409462783551204,
+        "gru_stored": 0.12737533583098007
+      },
+      "gru_latent_share_at_limit": {
+        "mean": 0.32570043103448276,
+        "min": 0.125,
+        "max": 0.5969827586206896
+      }
+    }
+  ],
+  "sensitivity": {
+    "motor_fault": {
+      "explicit_adaptive": [
+        0.00893015653682307,
+        0.0035161065643679636
+      ],
+      "explicit_adaptive_alarm_0.2s": [
+        0.008981973077611406,
+        0.003716849144761171
+      ],
+      "explicit_window_0.8s": [
+        0.014244682448307183,
+        0.006744971861371684
+      ],
+      "explicit_window_1.6s": [
+        0.010092505528873906,
+        0.004429465681976917
+      ],
+      "explicit_window_3.2s": [
+        0.011596339553054369,
+        0.035295619065888136
+      ]
+    },
+    "severe_motor": {
+      "explicit_adaptive": [
+        0.010053240507162648,
+        0.003953122924542905
+      ],
+      "explicit_adaptive_alarm_0.2s": [
+        0.010146859762370048,
+        0.004188452050046876
+      ],
+      "explicit_window_0.8s": [
+        0.01498780160211094,
+        0.011412491999069544
+      ],
+      "explicit_window_1.6s": [
+        0.011758596407445325,
+        0.006433602486507639
+      ],
+      "explicit_window_3.2s": [
+        0.016432243178841652,
+        0.05996424717991325
+      ]
+    },
+    "low_friction": {
+      "explicit_adaptive": [
+        0.016329031129224836,
+        0.03669101673100295
+      ],
+      "explicit_adaptive_alarm_0.2s": [
+        0.01754839863316586,
+        0.039388077437706
+      ],
+      "explicit_window_0.8s": [
+        0.018209820505922836,
+        0.028939987357912856
+      ],
+      "explicit_window_1.6s": [
+        0.017435991786362248,
+        0.03613056511250314
+      ],
+      "explicit_window_3.2s": [
+        0.01810244216813789,
+        0.041820429159641105
+      ]
+    },
+    "severe_hidden": {
+      "explicit_adaptive": [
+        0.019513578210365572,
+        0.02929277897001084
+      ],
+      "explicit_adaptive_alarm_0.2s": [
+        0.019200900670681604,
+        0.030831195551379195
+      ],
+      "explicit_window_0.8s": [
+        0.0205882077274705,
+        0.022265009020630555
+      ],
+      "explicit_window_1.6s": [
+        0.019520999882158933,
+        0.027862272662087992
+      ],
+      "explicit_window_3.2s": [
+        0.027769227670022836,
+        0.033693756702051963
+      ]
+    }
+  },
+  "expectations": [
+    {
+      "statement": "After a motor fault the explicit estimator settles at a lower yaw-rate error than the GRU",
+      "measure": "GRU error / explicit error, geometric mean over episodes, motor fault, later than 1.5 s, yaw rate",
+      "ratio": 5.9535696719882,
+      "interval": [
+        4.750220766129709,
+        7.432805508728972
+      ],
+      "range_across_seeds": [
+        5.277008015751672,
+        6.464606862154026
+      ],
+      "verdict": "holds"
+    },
+    {
+      "statement": "For the fault to 0.25, outside the training faults, the gap is at least tenfold",
+      "measure": "GRU error / explicit error, geometric mean over episodes, motor fault to 0.25, later than 1.5 s, yaw rate",
+      "ratio": 29.158291622139227,
+      "interval": [
+        24.257178642994013,
+        34.18562286809435
+      ],
+      "range_across_seeds": [
+        23.9559808799967,
+        31.68039950392284
+      ],
+      "verdict": "holds"
+    },
+    {
+      "statement": "In the first 1.5 s after a motor fault the GRU has the lower yaw-rate error",
+      "measure": "GRU error / explicit error, geometric mean over episodes, motor fault, first 1.5 s, yaw rate",
+      "ratio": 0.5956075442114115,
+      "interval": [
+        0.5043110603125613,
+        0.7036647853375696
+      ],
+      "range_across_seeds": [
+        0.5391339129250037,
+        0.6694687772236082
+      ],
+      "verdict": "holds"
+    },
+    {
+      "statement": "On low friction the GRU has the lower speed error",
+      "measure": "GRU error / explicit error, geometric mean over episodes, low friction, later than 1.5 s, speed",
+      "ratio": 0.7123813139616817,
+      "interval": [
+        0.62119355646854,
+        0.8336851954387926
+      ],
+      "range_across_seeds": [
+        0.6557769852196924,
+        0.763165636727247
+      ],
+      "verdict": "holds"
+    },
+    {
+      "statement": "At friction 0.015 the explicit estimator settles at the lower speed error",
+      "measure": "GRU error / explicit error, geometric mean over episodes, friction 0.015, later than 1.5 s, speed",
+      "ratio": 2.6248604338580868,
+      "interval": [
+        2.3836676924174434,
+        2.905090240464599
+      ],
+      "range_across_seeds": [
+        2.186715840292848,
+        3.416367294160784
+      ],
+      "verdict": "holds"
+    },
+    {
+      "statement": "At friction 0.015 the GRU settles at the lower yaw-rate error",
+      "measure": "GRU error / explicit error, geometric mean over episodes, friction 0.015, later than 1.5 s, yaw rate",
+      "ratio": 0.5415282060759575,
+      "interval": [
+        0.46393324294209914,
+        0.6456232876832337
+      ],
+      "range_across_seeds": [
+        0.35665163172341424,
+        0.7286406835468876
+      ],
+      "verdict": "holds"
+    },
+    {
+      "statement": "Without any change the explicit estimator is worse than the fixed model in yaw rate",
+      "measure": "explicit error / fixed error, no change, all origins, yaw rate",
+      "ratio": 1.549743419515871,
+      "interval": [
+        1.3205352863926227,
+        1.8001494292678715
+      ],
+      "range_across_seeds": null,
+      "verdict": "holds"
+    },
+    {
+      "statement": "Without any change the GRU is worse than the explicit estimator in yaw rate",
+      "measure": "GRU error / explicit error, geometric mean over episodes, no change, all origins, yaw rate",
+      "ratio": 2.6369468677735384,
+      "interval": [
+        2.324114889938368,
+        2.9320343558690194
+      ],
+      "range_across_seeds": [
+        2.425967703418174,
+        2.947523081375323
+      ],
+      "verdict": "holds"
+    },
+    {
+      "statement": "The GRU latent state sits at its limits after the fault to 0.25 but not after faults like the training ones",
+      "measure": "share of latent values beyond +-0.95 later than 1.5 s, mean over episodes and seeds",
+      "motor_fault_to_0.25": 0.3157454508556888,
+      "motor_fault": 0.1597217179258646,
+      "verdict": "does not hold"
+    }
+  ]
+}

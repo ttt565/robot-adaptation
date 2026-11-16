@@ -14,6 +14,7 @@
 | [同日志预测](mujoco_prediction_ready/README.md) | 四种预测器复用同一份 MuJoCo 数据，比较 0.02 秒与 0.5 秒预测 |
 | [CNN-GRU 学习预测](mujoco_learned_ready/README.md) | 采集 RGB 和状态、离线训练、独立测试、分布外检查及在线潜在状态演示 |
 | [复核对照](followup_checks/README.md) | 闭环下效率估计的偏差与工具变量修正；同一批留出日志上显式估计器与 GRU 的对照。只需 NumPy 和 Matplotlib |
+| [适应方式对照研究](adaptation_study/README.md) | 实验 0：GRU 训练到收敛并重复 8 个种子，新增 84 个留出回合，带区间地重做显式估计器与 GRU 的对照 |
 
 ## Windows 启动
 

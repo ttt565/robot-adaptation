@@ -1,0 +1,103 @@
+{
+  "model": "history",
+  "parameter_count": 7488,
+  "torch_version": "2.2.2",
+  "threads_per_seed": 1,
+  "protocol": {
+    "source": "learning.py model, loss, optimiser, windows and normalisation, unchanged",
+    "max_epochs": 600,
+    "patience": 50,
+    "min_epochs": 40,
+    "selection": "epoch with the lowest validation loss",
+    "improvement_threshold": 1e-06,
+    "training_episodes": 48,
+    "validation_episodes": 12
+  },
+  "seeds": [
+    {
+      "seed": 0,
+      "epochs_run": 160,
+      "best_epoch": 110,
+      "best_validation_loss": 0.31168851057688396,
+      "validation_loss_at_epoch_40": 0.34736881256103513,
+      "stopped_by_patience": true,
+      "seconds": 83.196135821
+    },
+    {
+      "seed": 1,
+      "epochs_run": 177,
+      "best_epoch": 127,
+      "best_validation_loss": 0.31092630823453266,
+      "validation_loss_at_epoch_40": 0.34773614406585696,
+      "stopped_by_patience": true,
+      "seconds": 93.571067446
+    },
+    {
+      "seed": 2,
+      "epochs_run": 161,
+      "best_epoch": 111,
+      "best_validation_loss": 0.3130370616912842,
+      "validation_loss_at_epoch_40": 0.3458050409952799,
+      "stopped_by_patience": true,
+      "seconds": 84.786442509
+    },
+    {
+      "seed": 3,
+      "epochs_run": 150,
+      "best_epoch": 100,
+      "best_validation_loss": 0.3063583413759867,
+      "validation_loss_at_epoch_40": 0.32983320554097495,
+      "stopped_by_patience": true,
+      "seconds": 75.569952255
+    },
+    {
+      "seed": 4,
+      "epochs_run": 181,
+      "best_epoch": 131,
+      "best_validation_loss": 0.31144694089889524,
+      "validation_loss_at_epoch_40": 0.3417062481244405,
+      "stopped_by_patience": true,
+      "seconds": 113.30801036899999
+    },
+    {
+      "seed": 5,
+      "epochs_run": 192,
+      "best_epoch": 142,
+      "best_validation_loss": 0.31511067946751914,
+      "validation_loss_at_epoch_40": 0.34581050475438435,
+      "stopped_by_patience": true,
+      "seconds": 115.026373032
+    },
+    {
+      "seed": 6,
+      "epochs_run": 168,
+      "best_epoch": 118,
+      "best_validation_loss": 0.30831872622172035,
+      "validation_loss_at_epoch_40": 0.3396838823954264,
+      "stopped_by_patience": true,
+      "seconds": 104.468300877
+    },
+    {
+      "seed": 7,
+      "epochs_run": 170,
+      "best_epoch": 120,
+      "best_validation_loss": 0.3063936233520508,
+      "validation_loss_at_epoch_40": 0.34528060754140216,
+      "stopped_by_patience": true,
+      "seconds": 103.840745086
+    }
+  ],
+  "stored_model": {
+    "checkpoint": "mujoco_learned_ready/results/trained/checkpoints/history.pt",
+    "best_epoch": 40,
+    "episodes_compared": 24,
+    "episodes_matching_stored_forecasts": 23,
+    "tolerance": 1e-05,
+    "different": [
+      {
+        "id": "ood_003",
+        "max_difference": 0.004799220710992813
+      }
+    ]
+  }
+}
